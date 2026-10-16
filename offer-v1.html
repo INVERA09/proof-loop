@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The offer, taken apart (version 1) · Proof Loop</title>
+<meta name="description" content="Every part of the Proof Loop membership, assembled piece by piece: from an unsigned proposal to a signed one.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239B2C2C'/><path d='M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/offer.css">
+</head>
+<body class="offer">
+
+<a class="skip-link" href="#parts">Skip to the parts list</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Proof Loop home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#9B2C2C"/><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+    Proof Loop
+  </a>
+  <button class="parts-toggle" type="button" aria-expanded="false" aria-controls="parts">
+    <span class="parts-toggle__count nums"><b data-parts-done>0</b> of 9 parts</span>
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <nav class="site-nav" aria-label="Site">
+    <a class="site-nav__link" href="index.html">Landing page</a>
+    <a class="btn btn--small" href="index.html#start">Get the free kit</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- The words. Fixed layer, one block per waypoint, in reading order. -->
+  <div class="copy">
+    <section class="copy__block" data-copy="hero">
+      <h1 class="copy__title copy__title--hero">Nobody signs for a stranger.</h1>
+      <p class="copy__body">You’re good at the work. A new buyer just has no way to check that yet, and a better pitch can’t fix it.</p>
+    </section>
+
+    <section class="copy__block" data-copy="tension">
+      <h2 class="copy__title">The pitch isn’t what loses the deal.</h2>
+      <p class="copy__body">Buyers aren’t doubting the idea. They’re doubting the person. And the usual fixes start too late.</p>
+    </section>
+
+    <section class="copy__block" data-copy="turn">
+      <h2 class="copy__title">So start smaller than a sale.</h2>
+      <p class="copy__body">One small pilot project, run properly and written down properly. That’s the whole method.</p>
+    </section>
+
+    <section class="copy__block" data-copy="asm1">
+      <h2 class="copy__title">Set it up so it counts.</h2>
+      <p class="copy__body">Before any work starts, the scope is fixed and the client has agreed that the result can be shared.</p>
+    </section>
+
+    <section class="copy__block" data-copy="asm2">
+      <h2 class="copy__title">Write down where they started.</h2>
+      <p class="copy__body">Proof is a before and an after. Most new consultants only remember the after, and only roughly.</p>
+    </section>
+
+    <section class="copy__block" data-copy="asm3">
+      <h2 class="copy__title">Ask while it’s fresh.</h2>
+      <p class="copy__body">The day the pilot ends, the client gets three short questions. Their answers become the quote, and the case study is drafted around them.</p>
+    </section>
+
+    <section class="copy__block" data-copy="peakA">
+      <h2 class="copy__title">Six parts. One page.</h2>
+      <p class="copy__body">Everything you just watched arrive becomes one case study a buyer can read in two minutes.</p>
+    </section>
+
+    <section class="copy__block" data-copy="peakB">
+      <h2 class="copy__title">Now there’s something to check.</h2>
+      <p class="copy__body">Same proposal. Same price. This time, your proof is attached.</p>
+    </section>
+
+    <section class="copy__block" data-copy="loop">
+      <h2 class="copy__title">Every pilot adds a page.</h2>
+      <p class="copy__body">The second pitch is easier than the first, and the third is easier again. That’s the loop.</p>
+    </section>
+
+    <section class="copy__block" data-copy="tiers">
+      <h2 class="copy__title">Three ways in.</h2>
+      <p class="copy__body">Start with the free kit. Move up when you want the writing done for you, or bigger pilots and a monthly call.</p>
+    </section>
+
+    <section class="copy__block copy__block--close" data-copy="close">
+      <h2 class="copy__title">Run your first pilot.</h2>
+      <p class="copy__body">The free kit has everything for one pilot. Your case studies stay yours, even if you leave.</p>
+      <div class="copy__actions">
+        <a class="btn" href="index.html#start">Get the free kit
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="copy__small">Proof Loop is a student concept for Innovation, Sprint One, 2026. It is not a real business. Names and numbers on the documents are samples.</p>
+    </section>
+  </div>
+
+  <!-- Callout labels. Desktop: placed beside the object with leader lines. Phone: listed under the words. -->
+  <div class="labels" aria-label="What each part is">
+    <div class="label" data-for="gap" data-win="-1 0.62">
+      <p class="label__name">The missing page</p>
+      <p class="label__text">No case study, no reviews, nobody to vouch. This is where deals stall.</p>
+      <p class="label__stat"><b class="nums">92%</b> of B2B buyers are more likely to buy after reading a trusted review. <span class="label__src">G2 and Heinz Marketing</span></p>
+    </div>
+
+    <div class="label" data-for="course" data-win="0.78 1.62">
+      <p class="label__name">Sales courses</p>
+      <p class="label__tier label__tier--muted">What exists now</p>
+      <p class="label__text">Teach the pitch in detail. You finish with a certificate, not something a buyer can check.</p>
+    </div>
+    <div class="label" data-for="reviews" data-win="0.86 1.62">
+      <p class="label__name">Review tools</p>
+      <p class="label__tier label__tier--muted">What exists now</p>
+      <p class="label__text">Great at collecting reviews once you have customers. On day one there’s nothing to collect.</p>
+    </div>
+
+    <div class="label" data-for="kit" data-win="1.98 2.62">
+      <p class="label__name">Free pilot kit</p>
+      <p class="label__tier">Free</p>
+      <p class="label__text">A pilot plan, a consent form and a case study template. Try the method with nothing to lose.</p>
+    </div>
+
+    <div class="label" data-for="scope" data-win="2.82 3.62">
+      <p class="label__name">Pilot scope sheet</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">One small job with a fixed scope and end date, so the result can actually be measured.</p>
+    </div>
+    <div class="label" data-for="consent" data-win="3.2 3.62">
+      <p class="label__name">Consent form</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">The client agrees up front that the result can be shared. Built in from day one, never chased later.</p>
+    </div>
+
+    <div class="label" data-for="before" data-win="3.92 4.62">
+      <p class="label__name">Starting point</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">Where the client was before you began, written down on day one.</p>
+    </div>
+    <div class="label" data-for="after" data-win="4.26 4.62">
+      <p class="label__name">Results capture</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">What changed, in numbers the buyer can check later.</p>
+    </div>
+
+    <div class="label" data-for="quote" data-win="4.98 5.72">
+      <p class="label__name">Client quote</p>
+      <p class="label__tier">Sent for you in Automate and Authority</p>
+      <p class="label__text">Three questions go out the day the pilot ends. You never have to chase a testimonial.</p>
+    </div>
+    <div class="label" data-for="case" data-win="5.34 5.72">
+      <p class="label__name">Case study</p>
+      <p class="label__tier">Template in Foundation · first draft written for you in Automate</p>
+      <p class="label__stat"><b class="nums">70%</b> of a sales rep’s time goes on non-selling work. Writing this up shouldn’t add to it. <span class="label__src">Salesforce, State of Sales, 2024</span></p>
+    </div>
+
+    <div class="label" data-for="pile" data-win="8.24 8.82">
+      <p class="label__name">Proof that stacks</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">Each pilot adds a page. By the third, you have a portfolio to point to.</p>
+    </div>
+    <div class="label" data-for="referral" data-win="8.46 8.82">
+      <p class="label__name">Referral credit</p>
+      <p class="label__tier">Every tier</p>
+      <p class="label__text">Bring in another consultant and get credit on your membership.</p>
+    </div>
+
+    <div class="label" data-for="t3" data-win="9.5 10.12">
+      <p class="label__name">Authority <span class="label__price nums">$249 a month</span></p>
+      <p class="label__text">Everything in Automate, plus bigger pilots and a monthly one-on-one strategy call, for fewer and more valuable clients.</p>
+    </div>
+    <div class="label" data-for="t2" data-win="9.42 10.12">
+      <p class="label__name">Automate <span class="label__price nums">$99 a month</span></p>
+      <p class="label__text">Everything in Foundation, plus the quote requests sent for you and every case study drafted for you.</p>
+    </div>
+    <div class="label" data-for="t1" data-win="9.34 10.12">
+      <p class="label__name">Foundation <span class="label__price nums">$39 a month</span></p>
+      <p class="label__text">The templates, onboarding and the pilot structure. You run it yourself, with a clear method.</p>
+    </div>
+  </div>
+
+  <svg class="leaders" aria-hidden="true"></svg>
+
+  <!-- The object. Decorative: everything it says is also in the words and labels above. -->
+  <div class="stage" aria-hidden="true">
+    <div class="world">
+      <div class="world__tilt">
+
+        <!-- Competitor objects -->
+        <div class="obj card cert" id="o-cert">
+          <span class="anchor" data-anchor="course"></span>
+          <p class="cert__kicker">Certificate of completion</p>
+          <p class="cert__title">Closing High-Ticket Clients</p>
+          <p class="cert__meta">Awarded to Sam Rivera</p>
+          <div class="cert__seal"><span>6-week<br>course</span></div>
+          <div class="cert__sig"></div>
+        </div>
+
+        <div class="obj card widget" id="o-reviews">
+          <span class="anchor" data-anchor="reviews"></span>
+          <div class="widget__row">
+            <p class="widget__title">Reviews</p>
+            <p class="widget__count nums">0</p>
+          </div>
+          <div class="widget__stars"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="widget__empty">No reviews yet.</p>
+        </div>
+
+        <!-- The unsigned proposal -->
+        <article class="obj doc proposal" id="o-proposal">
+          <header class="doc__head">
+            <span class="doc__mark"><span class="mono">SR</span>Sam Rivera · Operations</span>
+            <span class="doc__tag">Sample</span>
+          </header>
+          <p class="doc__kicker">Proposal</p>
+          <h3 class="doc__title">Customer follow-up system</h3>
+          <p class="doc__meta">Prepared for Harbour Street Physio</p>
+          <ul class="doc__rows">
+            <li><span>Timeline</span><span>Six weeks</span></li>
+            <li><span>Fee</span><span class="nums">$4,800 + GST</span></li>
+          </ul>
+
+          <div class="slot">
+            <span class="anchor anchor--slot" data-anchor="gap"></span>
+            <div class="slot__empty">
+              <span class="slot__plus"></span>
+              <span>No proof attached</span>
+            </div>
+            <div class="slot__doc">
+              <article class="doc doc--mini case">
+                <header class="doc__head">
+                  <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Case study</span>
+                  <span class="doc__tag">Sample</span>
+                </header>
+                <p class="doc__kicker">Two-week pilot</p>
+                <h3 class="doc__title">Enquiry replies from 26 hours to 1.5 hours</h3>
+                <p class="doc__meta">Harbour Street Physio · Sam Rivera</p>
+                <div class="case__fig">
+                  <p class="doc__label">Average reply, day 14</p>
+                  <p class="doc__big">1.5<small>hrs</small></p>
+                  <p class="case__from">from 26 hrs on day 1</p>
+                </div>
+                <p class="case__quote">“We stopped losing people between the first call and the first booking.”</p>
+                <footer class="doc__foot"><span>Client approved for publication</span><span>Proof Loop</span></footer>
+              </article>
+            </div>
+            <svg class="clip" viewBox="0 0 24 60"><path d="M8 50V12a5 5 0 0 1 10 0v38a8 8 0 0 1-16 0V16" fill="none" stroke="#8C8078" stroke-width="2.6" stroke-linecap="round"/></svg>
+          </div>
+
+          <div class="proposal__side">
+            <p class="doc__label">Attached proof</p>
+            <div class="doc__lines"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="proposal__sign">
+              <svg class="signature" viewBox="0 0 120 40" preserveAspectRatio="xMinYMid meet"><path d="M3 30c6-1 9-12 13-20 3-6 7-6 6 1-1 8-6 17-3 18 4 1 7-13 11-13 3 0 1 9 4 9 4 0 6-11 10-11 3 0 2 7 5 7 5 0 8-15 13-15 4 0 0 13 4 13 6 0 9-6 14-6 4 0 3 4 7 3 6-1 12-7 21-7"/></svg>
+              <p class="doc__sigline">Client signature</p>
+              <div class="stamp"><span>Accepted</span><small class="nums">12 Oct 2026</small></div>
+            </div>
+          </div>
+          <footer class="doc__foot"><span>Page 1 of 1</span><span class="nums">SR-0142</span></footer>
+        </article>
+
+        <!-- The free kit -->
+        <div class="obj card kit" id="o-kit">
+          <span class="anchor" data-anchor="kit"></span>
+          <svg class="kit__clip" viewBox="0 0 24 60"><path d="M8 50V12a5 5 0 0 1 10 0v38a8 8 0 0 1-16 0V16" fill="none" stroke="#9B2C2C" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <p class="kit__kicker">Proof Loop</p>
+          <p class="kit__title">Free pilot kit</p>
+          <ul class="kit__list">
+            <li>Pilot plan</li>
+            <li>Consent form</li>
+            <li>Case study template</li>
+          </ul>
+        </div>
+
+        <!-- The exploded stack: six parts of one case study -->
+        <div class="obj stack" id="o-stack">
+
+          <article class="layer doc" id="l-scope">
+            <span class="anchor anchor--layer" data-anchor="scope"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Pilot scope</span>
+              <span class="doc__tag">Step 1</span>
+            </header>
+            <p class="doc__kicker">One job. Fixed end date.</p>
+            <h3 class="doc__title">Two-week enquiry pilot</h3>
+            <ul class="doc__rows">
+              <li><span>Client</span><span>Harbour Street Physio</span></li>
+              <li><span>Length</span><span>14 days</span></li>
+              <li><span>Goal</span><span>Reply to every enquiry within 2 hours</span></li>
+              <li><span>Measured by</span><span>Average reply time</span></li>
+              <li><span>Ends</span><span class="nums">28 October</span></li>
+            </ul>
+            <div class="doc__lines"><i></i><i></i><i></i><i></i></div>
+            <footer class="doc__foot"><span>Fixed scope</span><span>Proof Loop</span></footer>
+          </article>
+
+          <article class="layer doc" id="l-consent">
+            <span class="anchor anchor--layer" data-anchor="consent"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Consent to share</span>
+              <span class="doc__tag">Step 2</span>
+            </header>
+            <p class="doc__kicker">Signed before work starts</p>
+            <h3 class="doc__title">Permission to publish results</h3>
+            <div class="consent__checks">
+              <p class="doc__check"><b></b>Business name and logo</p>
+              <p class="doc__check"><b></b>Before and after figures</p>
+              <p class="doc__check"><b></b>A short quote</p>
+              <p class="doc__check"><b></b>Client reviews it before anything goes out</p>
+            </div>
+            <div class="consent__sign">
+              <svg viewBox="0 0 120 40"><path d="M4 28c8-2 10-16 16-16 5 0-3 18 2 18 6 0 8-14 14-14 4 0 1 10 6 10s9-9 14-9c4 0 2 6 7 6 7 0 13-6 22-6" fill="none" stroke="#2A221F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p class="doc__sigline">M. Chen, Practice manager</p>
+            </div>
+            <footer class="doc__foot"><span>Built into every pilot</span><span>Proof Loop</span></footer>
+          </article>
+
+          <article class="layer doc" id="l-before">
+            <span class="anchor anchor--layer" data-anchor="before"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Starting point</span>
+              <span class="doc__tag">Day 1</span>
+            </header>
+            <p class="doc__label">Average reply to a new enquiry</p>
+            <p class="doc__big">26<small>hrs</small></p>
+            <ul class="doc__rows">
+              <li><span>Enquiries never answered</span><span class="nums">31%</span></li>
+              <li><span>Enquiries that became bookings</span><span class="nums">4 in 10</span></li>
+            </ul>
+            <div class="doc__lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <footer class="doc__foot"><span class="nums">Recorded 14 October</span><span>Proof Loop</span></footer>
+          </article>
+
+          <article class="layer doc" id="l-after">
+            <span class="anchor anchor--layer" data-anchor="after"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Results</span>
+              <span class="doc__tag">Day 14</span>
+            </header>
+            <p class="doc__label">Average reply to a new enquiry</p>
+            <p class="doc__big doc__big--accent">1.5<small>hrs</small></p>
+            <div class="bars">
+              <div class="bars__row"><span>Day 1</span><i style="--w: 100%"></i><b class="nums">26 hrs</b></div>
+              <div class="bars__row bars__row--accent"><span>Day 14</span><i style="--w: 5.8%"></i><b class="nums">1.5 hrs</b></div>
+            </div>
+            <ul class="doc__rows">
+              <li><span>Enquiries never answered</span><span class="nums">4%</span></li>
+              <li><span>Enquiries that became bookings</span><span class="nums">7 in 10</span></li>
+            </ul>
+            <footer class="doc__foot"><span class="nums">Recorded 28 October</span><span>Proof Loop</span></footer>
+          </article>
+
+          <article class="layer doc" id="l-quote">
+            <span class="anchor anchor--layer" data-anchor="quote"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Client quote</span>
+              <span class="doc__tag">Day 14</span>
+            </header>
+            <ol class="questions">
+              <li>What was the problem before?</li>
+              <li>What changed in two weeks?</li>
+              <li>Would you recommend Sam?</li>
+            </ol>
+            <p class="doc__quote">We stopped losing people between the first call and the first booking.</p>
+            <p class="doc__cite">M. Chen, Practice manager, Harbour Street Physio</p>
+            <footer class="doc__foot"><span>Asked the day the pilot ended</span><span>Proof Loop</span></footer>
+          </article>
+
+          <article class="layer doc case" id="l-case">
+            <span class="anchor anchor--layer" data-anchor="case"></span>
+            <header class="doc__head">
+              <span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Case study</span>
+              <span class="doc__tag">Sample</span>
+            </header>
+            <p class="doc__kicker">Two-week pilot</p>
+            <h3 class="doc__title">Enquiry replies from 26 hours to 1.5 hours</h3>
+            <p class="doc__meta">Harbour Street Physio · Sam Rivera</p>
+            <div class="case__fig">
+              <p class="doc__label">Average reply, day 14</p>
+              <p class="doc__big">1.5<small>hrs</small></p>
+              <p class="case__from">from 26 hrs on day 1</p>
+            </div>
+            <p class="case__quote">“We stopped losing people between the first call and the first booking.”</p>
+            <footer class="doc__foot"><span>Client approved for publication</span><span>Proof Loop</span></footer>
+          </article>
+        </div>
+
+        <!-- The pile: proof that stacks -->
+        <article class="obj doc case pile" id="o-pile1">
+          <header class="doc__head"><span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Case study</span><span class="doc__tag">Sample</span></header>
+          <p class="doc__kicker">Pilot 2</p>
+          <h3 class="doc__title">Quotes sent the same day, down from three days</h3>
+          <p class="doc__meta">Northside Electrical · Sam Rivera</p>
+          <div class="doc__lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <footer class="doc__foot"><span>Client approved for publication</span><span>Proof Loop</span></footer>
+        </article>
+        <article class="obj doc case pile" id="o-pile2">
+          <header class="doc__head"><span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Case study</span><span class="doc__tag">Sample</span></header>
+          <p class="doc__kicker">Pilot 3</p>
+          <h3 class="doc__title">New client onboarding from nine days to four</h3>
+          <p class="doc__meta">Wren &amp; Co Accounting · Sam Rivera</p>
+          <div class="doc__lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <footer class="doc__foot"><span>Client approved for publication</span><span>Proof Loop</span></footer>
+        </article>
+        <article class="obj doc case pile" id="o-pile3">
+          <span class="anchor" data-anchor="pile"></span>
+          <header class="doc__head"><span class="doc__mark"><svg viewBox="0 0 32 32"><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#9B2C2C" stroke-width="3" stroke-linecap="round"/></svg>Case study</span><span class="doc__tag">Sample</span></header>
+          <p class="doc__kicker">Pilot 4</p>
+          <h3 class="doc__title">Missed calls halved in a month</h3>
+          <p class="doc__meta">Coastline Dental · Sam Rivera</p>
+          <div class="doc__lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <footer class="doc__foot"><span>Client approved for publication</span><span>Proof Loop</span></footer>
+        </article>
+
+        <!-- Referral credit -->
+        <div class="obj card referral" id="o-ref">
+          <span class="anchor" data-anchor="referral"></span>
+          <p class="referral__kicker">Referral credit</p>
+          <p class="referral__title">Refer a consultant. When they join, you get credit on your membership.</p>
+          <span class="referral__chip">+ Credit</span>
+        </div>
+
+        <!-- The three tiers, as plates -->
+        <div class="obj tiers" id="o-tiers">
+          <div class="plate plate--1" id="p-1">
+            <div class="plate__top">
+              <span class="anchor anchor--plate" data-anchor="t1"></span>
+              <p class="plate__name">Foundation</p>
+              <p class="plate__price nums">$39<small>/month</small></p>
+              <p class="plate__line">Templates · onboarding · pilot structure</p>
+            </div>
+            <div class="plate__front"></div>
+            <div class="plate__side"></div>
+          </div>
+          <div class="plate plate--2" id="p-2">
+            <div class="plate__top">
+              <span class="anchor anchor--plate" data-anchor="t2"></span>
+              <p class="plate__name">Automate</p>
+              <p class="plate__price nums">$99<small>/month</small></p>
+              <p class="plate__line">+ quote requests · case study drafts</p>
+            </div>
+            <div class="plate__front"></div>
+            <div class="plate__side"></div>
+          </div>
+          <div class="plate plate--3" id="p-3">
+            <div class="plate__top">
+              <span class="anchor anchor--plate" data-anchor="t3"></span>
+              <p class="plate__name">Authority</p>
+              <p class="plate__price nums">$249<small>/month</small></p>
+              <p class="plate__line">+ bigger pilots · monthly strategy call</p>
+            </div>
+            <div class="plate__front"></div>
+            <div class="plate__side"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The parts list: the page's map. Ticks off as each part arrives; every row jumps. -->
+  <nav class="parts" id="parts" aria-label="Parts of the offer">
+    <p class="parts__title">The offer, in parts</p>
+    <ol class="parts__list">
+      <li><button type="button" data-part="kit" data-go="turn">Pilot kit</button></li>
+      <li><button type="button" data-part="scope" data-go="asm1">Scope sheet</button></li>
+      <li><button type="button" data-part="consent" data-go="asm1">Consent form</button></li>
+      <li><button type="button" data-part="before" data-go="asm2">Starting point</button></li>
+      <li><button type="button" data-part="after" data-go="asm2">Results</button></li>
+      <li><button type="button" data-part="quote" data-go="asm3">Client quote</button></li>
+      <li><button type="button" data-part="case" data-go="asm3">Case study</button></li>
+      <li><button type="button" data-part="referral" data-go="loop">Referral credit</button></li>
+      <li><button type="button" data-part="call" data-go="tiers">Strategy call</button></li>
+    </ol>
+  </nav>
+
+  <div class="spacer" aria-hidden="true"></div>
+</main>
+
+<div class="grain" aria-hidden="true"></div>
+<script src="assets/offer.js"></script>
+</body>
+</html>

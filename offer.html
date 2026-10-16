@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The offer, taken apart · Proof Loop</title>
+<meta name="description" content="Every part of the Proof Loop membership, built piece by piece in 3D: from an unsigned proposal to a signed one, with every figure sourced.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%239B2C2C'/><path d='M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/></svg>">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/offer.v2.css">
+</head>
+<body class="offer2">
+
+<a class="skip-link" href="#main">Skip to the content</a>
+
+<header class="bar" data-bar>
+  <a class="brand" href="index.html" aria-label="Proof Loop home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#9B2C2C"/><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <span>Proof Loop</span>
+  </a>
+  <nav class="bar__nav" aria-label="On this page">
+    <a href="#problem" data-nav>Why</a>
+    <a href="#difference" data-nav>Difference</a>
+    <a href="#pilot" data-nav>How it works</a>
+    <a href="#inside" data-nav>Inside</a>
+    <a href="#pricing" data-nav>Pricing</a>
+    <a href="#compare" data-nav>Compare</a>
+    <a href="#sources" data-nav>Sources</a>
+  </nav>
+  <a class="btn btn--small" href="index.html#start">Get the free kit</a>
+</header>
+
+<!-- One 3D canvas behind the whole page. The three 3D chapters are see-through and show it;
+     every other chapter has its own ground and covers it. Decorative: all its words are in the page. -->
+<div class="stage" aria-hidden="true">
+  <canvas class="stage__canvas"></canvas>
+  <svg class="stage__leaders"></svg>
+  <div class="stage__callouts"></div>
+</div>
+
+<main id="main">
+
+  <!-- ============ 1. Hero (3D) ============ -->
+  <section class="act act--hero" id="top" data-act="hero" data-span="1.1" aria-labelledby="hero-title">
+    <div class="act__pin">
+      <div class="hero__copy" data-win="-1 0.72">
+        <h1 id="hero-title" class="hero__title">Nobody signs for a stranger.</h1>
+        <p class="hero__lede">Proof Loop turns a new consultant’s first small project into proof a buyer can check.</p>
+        <div class="hero__actions">
+          <a class="btn" href="index.html#start">Get the free kit
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#pilot">See how it works</a>
+        </div>
+        <p class="hero__price">Free to start. Plans from $149 a month.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. The problem ============ -->
+  <section class="sheet sheet--light" id="problem" aria-labelledby="problem-title">
+    <div class="wrap">
+      <header class="sheet__head" data-rise>
+        <h2 id="problem-title" class="sheet__title">Buyers check before they buy.</h2>
+        <p class="sheet__lede">Before anyone hands over $4,800, they look for proof that someone else took the risk first. A new consultant has nothing for them to check yet.</p>
+      </header>
+
+      <ol class="ledger" aria-label="What buyers rely on">
+        <li class="ledger__row ledger__row--lead" data-rise>
+          <p class="ledger__fig nums">92<span>%</span></p>
+          <p class="ledger__text">of business buyers say a trusted review makes them more likely to buy.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></p>
+        </li>
+        <li class="ledger__row" data-rise>
+          <p class="ledger__fig nums">270<span>%</span></p>
+          <p class="ledger__text">more likely to be bought: products with five reviews, compared with none, at one online retailer.<sup><a href="#src-2" aria-label="Source 2">2</a></sup></p>
+        </li>
+        <li class="ledger__row" data-rise>
+          <p class="ledger__fig nums">88<span>%</span></p>
+          <p class="ledger__text">of people trust recommendations from people they know more than any other source.<sup><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+        </li>
+        <li class="ledger__row" data-rise>
+          <p class="ledger__fig nums">56<span>%</span></p>
+          <p class="ledger__text">of business technology buyers spoke to a peer before buying. Sellers guessed 34%.<sup><a href="#src-4" aria-label="Source 4">4</a></sup></p>
+        </li>
+      </ol>
+
+      <div class="market" data-rise>
+        <h3 class="market__title">Who it’s for</h3>
+        <p class="market__lede">People who are good at the work and new to selling it: consultants, coaches and freelancers going out on their own.</p>
+        <dl class="market__grid">
+          <div><dt class="nums">1.1 million</dt><dd>Australians work as independent contractors.<sup><a href="#src-5" aria-label="Source 5">5</a></sup></dd></div>
+          <div><dt class="nums">366,289</dt><dd>professional, scientific and technical services businesses trade in Australia.<sup><a href="#src-6" aria-label="Source 6">6</a></sup></dd></div>
+          <div><dt class="nums">51%</dt><dd>of the ones that started in 2022–23 were still trading by June 2026.<sup><a href="#src-6" aria-label="Source 6">6</a></sup></dd></div>
+          <div><dt class="nums">$40.8 billion</dt><dd>a year: Australian management consulting, across 95,557 businesses.<sup><a href="#src-7" aria-label="Source 7">7</a></sup></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. What exists now (annotated competitors) ============ -->
+  <section class="sheet sheet--dark" id="exists" aria-labelledby="exists-title">
+    <div class="wrap">
+      <header class="sheet__head" data-rise>
+        <h2 id="exists-title" class="sheet__title">What new consultants try today.</h2>
+        <p class="sheet__lede">Each of these does its own job well. None of them hands a buyer finished proof.</p>
+      </header>
+
+      <div class="rivals">
+        <article class="rival" data-rise>
+          <header class="rival__head">
+            <p class="rival__kind">Sales programs</p>
+            <h3 class="rival__name">Consulting.com</h3>
+          </header>
+          <dl class="rival__notes">
+            <div><dt>What it does</dt><dd>Programs and coaching for people building a consulting or online business.</dd></div>
+            <div><dt>Good at</dt><dd>A clear promise and a big client base: “23,000+ clients served”.</dd></div>
+            <div class="rival__gap"><dt>Missing</dt><dd>You finish with skills, not something a buyer can check.</dd></div>
+            <div><dt>Price</dt><dd>Not published. You apply and book a call.<sup><a href="#src-8" aria-label="Source 8">8</a></sup></dd></div>
+          </dl>
+        </article>
+
+        <article class="rival" data-rise>
+          <header class="rival__head">
+            <p class="rival__kind">Sales coaching</p>
+            <h3 class="rival__name">Client Ascension</h3>
+          </header>
+          <dl class="rival__notes">
+            <div><dt>What it does</dt><dd>Training for agency owners on high-ticket sales calls.</dd></div>
+            <div><dt>Good at</dt><dd>Call scripts and handling objections.</dd></div>
+            <div class="rival__gap"><dt>Missing</dt><dd>It stops at the pitch. There’s no proof at the end.</dd></div>
+            <div><dt>Price</dt><dd>Not published. You book a call.<sup><a href="#src-9" aria-label="Source 9">9</a></sup></dd></div>
+          </dl>
+        </article>
+
+        <article class="rival" data-rise>
+          <header class="rival__head">
+            <p class="rival__kind">Testimonial tools</p>
+            <h3 class="rival__name">Senja, Testimonial.to</h3>
+          </header>
+          <dl class="rival__notes">
+            <div><dt>What it does</dt><dd>Collects testimonials from existing customers, and can turn them into case studies.</dd></div>
+            <div><dt>Good at</dt><dd>Gathering and showing proof once customers exist.</dd></div>
+            <div class="rival__gap"><dt>Missing</dt><dd>On day one there are no customers to ask.</dd></div>
+            <div><dt>Price</dt><dd>Free to $59 a month (Senja).<sup><a href="#src-10" aria-label="Source 10">10</a></sup></dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <p class="exists__close" data-rise>Proof Loop starts before any of them can help, with <em>zero</em> customers, and ends with a case study.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3b. Our point of difference ============ -->
+  <section class="sheet sheet--light diff" id="difference" aria-labelledby="difference-title">
+    <div class="wrap">
+      <header class="sheet__head" data-rise>
+        <p class="diff__kicker">Our point of difference</p>
+        <h2 id="difference-title" class="sheet__title">From zero customers to proof a buyer can check. In one system.</h2>
+        <p class="sheet__lede">Of everything we compared, Proof Loop is the only one that starts before a consultant’s first client and finishes with a client-approved case study.</p>
+      </header>
+      <ol class="diff__list">
+        <li data-rise>
+          <p class="diff__n nums">1</p>
+          <div>
+            <h3>It starts at zero.</h3>
+            <p>Sales programs teach the pitch. Testimonial tools need customers to ask. Proof Loop starts with one small pilot, before there’s anyone to ask.</p>
+          </div>
+        </li>
+        <li data-rise>
+          <p class="diff__n nums">2</p>
+          <div>
+            <h3>The proof is built into the work.</h3>
+            <p>The goal is set, consent is signed and day one is measured before the work starts. Nobody has to remember the details afterwards.</p>
+          </div>
+        </li>
+        <li data-rise>
+          <p class="diff__n nums">3</p>
+          <div>
+            <h3>It ends with something a buyer can check.</h3>
+            <p>One page, with before and after figures and the client’s own words, approved by the client and ready to clip to the next proposal.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="diff__note" data-rise>Compared with Consulting.com, Client Ascension, Senja and Testimonial.to, from their own websites on 13 October 2026. <a class="text-link" href="#compare">See the full comparison</a></p>
+    </div>
+  </section>
+
+  <!-- ============ 4. How it works: the pilot, assembled (3D, the peak) ============ -->
+  <section class="act act--pilot" id="pilot" data-act="pilot" data-span="12.6" aria-labelledby="pilot-title">
+    <div class="act__pin">
+
+      <h2 id="pilot-title" class="visually-hidden">How it works: one pilot, six parts</h2>
+
+      <div class="pilot__col">
+        <div class="beat" data-win="-1 1.25">
+          <p class="beat__kicker">How it works</p>
+          <h3 class="beat__title">So start smaller than a sale.</h3>
+          <p class="beat__text">One small pilot, run properly and written down properly. The free kit has everything for the first one.</p>
+          <div class="spec spec--kit">
+            <p class="spec__name">Free pilot kit <span class="chip chip--free">Free</span></p>
+            <p class="spec__what">A pilot plan, a consent form and a case study template, plus a short guide to running a two-week pilot.</p>
+          </div>
+        </div>
+
+        <article class="beat spec" data-win="1.25 2.45" data-step="0">
+          <p class="spec__step">Part 1 of 6 · Before the work</p>
+          <h3 class="spec__title">Pilot scope sheet</h3>
+          <p class="spec__what">One small job with a fixed goal and end date, so the result can be measured.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>A one-page template: client, goal, length, how it’s measured, end date.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip chip--free">Free kit</span><span class="chip">All plans</span></dd></div>
+            <div><dt>Why it matters</dt><dd>A vague job gives a vague result. A buyer can only check a number that was set before the work began.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>Sales programs teach the pitch, not how to set a goal a buyer can check later.</dd></div>
+          </dl>
+        </article>
+
+        <article class="beat spec" data-win="2.45 3.65" data-step="1">
+          <p class="spec__step">Part 2 of 6 · Before the work</p>
+          <h3 class="spec__title">Consent form</h3>
+          <p class="spec__what">The client agrees up front that the result can be shared, and sees it before it goes out.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>A plain-English form covering the business name, the figures and a short quote.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip chip--free">Free kit</span><span class="chip">All plans</span></dd></div>
+            <div><dt>Why it matters</dt><dd>In Australia it’s illegal to create or arrange a fake or misleading review.<sup><a href="#src-11" aria-label="Source 11">11</a></sup> Real words, approved by the client, keep a member on the right side of that.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>Testimonial tools ask for permission after the job. Here it’s agreed before the work starts.</dd></div>
+          </dl>
+        </article>
+
+        <article class="beat spec" data-win="3.65 4.85" data-step="2">
+          <p class="spec__step">Part 3 of 6 · Day 1</p>
+          <h3 class="spec__title">Starting point</h3>
+          <p class="spec__what">Where the client was before you began, written down on day one.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>A baseline sheet with prompts for the numbers worth recording.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip">All plans</span></dd></div>
+            <div><dt>Why it matters</dt><dd>Most new consultants only remember the after, and only roughly. Proof needs a before.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>Review tools only see the after. Proof Loop records where the client started.</dd></div>
+          </dl>
+        </article>
+
+        <article class="beat spec" data-win="4.85 6.05" data-step="3">
+          <p class="spec__step">Part 4 of 6 · Day 14</p>
+          <h3 class="spec__title">Results capture</h3>
+          <p class="spec__what">What changed, measured the same way as on day one.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>A results sheet and a before-and-after chart, ready for the case study.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip">All plans</span></dd></div>
+            <div><dt>Why it matters</dt><dd>The same measure, taken twice, turns “it went well” into a figure a buyer can check.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>A review says “great work”. This shows the number that changed.</dd></div>
+          </dl>
+        </article>
+
+        <article class="beat spec" data-win="6.05 7.25" data-step="4">
+          <p class="spec__step">Part 5 of 6 · The day it ends</p>
+          <h3 class="spec__title">Client quote</h3>
+          <p class="spec__what">Three short questions go to the client the day the pilot ends, while it’s fresh.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>Foundation: the questions to send. Automate and Authority: sent for you, with reminders.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip">All plans</span><span class="chip chip--auto">Sent for you in Automate</span></dd></div>
+            <div><dt>Why it matters</dt><dd>56% of business technology buyers spoke to a peer before buying.<sup><a href="#src-4" aria-label="Source 4">4</a></sup> A client’s own words are the next best thing.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>Testimonial tools collect quotes from existing customers. Here the questions are part of the pilot, timed for the day it ends.</dd></div>
+          </dl>
+        </article>
+
+        <article class="beat spec" data-win="7.25 8.45" data-step="5">
+          <p class="spec__step">Part 6 of 6 · After</p>
+          <h3 class="spec__title">Case study</h3>
+          <p class="spec__what">One page a buyer can read in two minutes: the problem, the change, the client’s words.</p>
+          <dl class="spec__facts">
+            <div><dt>You get</dt><dd>Foundation: a template. Automate and Authority: a first draft written from your pilot’s figures.</dd></div>
+            <div><dt>Included in</dt><dd><span class="chip">All plans</span><span class="chip chip--auto">Drafted for you in Automate</span></dd></div>
+            <div><dt>Why it matters</dt><dd>Sales reps in Australia and New Zealand spend 71% of their time on work that isn’t selling.<sup><a href="#src-12" aria-label="Source 12">12</a></sup> Writing proof shouldn’t add to it.</dd></div>
+            <div class="spec__vs"><dt>Compared with what exists</dt><dd>Senja can turn testimonials into case studies once you have customers. Proof Loop builds the first one from a pilot.</dd></div>
+          </dl>
+        </article>
+
+        <div class="beat beat--peak" data-win="8.45 9.5">
+          <h3 class="beat__title beat__title--big">Six parts. One page.</h3>
+          <p class="beat__text">Everything you just watched arrive becomes one case study.</p>
+        </div>
+        <div class="beat beat--peak" data-win="9.5 11.05">
+          <h3 class="beat__title beat__title--big">Clipped to the next proposal.</h3>
+          <p class="beat__text">Same proposal. Same price. This time, the proof is attached.</p>
+        </div>
+        <div class="beat beat--peak" data-win="11.05 Infinity">
+          <h3 class="beat__title beat__title--big">Now there’s something to check.</h3>
+          <p class="beat__text">The buyer reads the case study, checks the figures and signs.</p>
+          <p class="beat__note">Sample documents. Names and figures are illustrative.</p>
+        </div>
+      </div>
+
+      <nav class="rail" aria-label="The six parts of a pilot">
+        <ol>
+          <li><button type="button" data-jump="1.95"><i></i><span>Scope</span></button></li>
+          <li><button type="button" data-jump="3.15"><i></i><span>Consent</span></button></li>
+          <li><button type="button" data-jump="4.35"><i></i><span>Day 1</span></button></li>
+          <li><button type="button" data-jump="5.55"><i></i><span>Day 14</span></button></li>
+          <li><button type="button" data-jump="6.75"><i></i><span>Quote</span></button></li>
+          <li><button type="button" data-jump="7.95"><i></i><span>Case study</span></button></li>
+          <li><button type="button" data-jump="11.6"><i></i><span>Signed</span></button></li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============ 5. Inside the membership: product screens ============ -->
+  <section class="sheet sheet--light inside" id="inside" data-swap aria-labelledby="inside-title">
+    <div class="inside__pin">
+      <div class="wrap inside__grid">
+        <div class="inside__text">
+          <h2 id="inside-title" class="sheet__title">Everything runs from one place.</h2>
+          <ol class="inside__steps">
+            <li data-swap-step="0">
+              <h3>Track the pilot</h3>
+              <p>Each pilot gets a page: the goal, the day-one number and the days left.</p>
+            </li>
+            <li data-swap-step="1">
+              <h3>The quote asks itself <span class="chip chip--auto">Automate</span></h3>
+              <p>On the last day the client gets three questions by text. A reminder follows if they don’t answer.</p>
+            </li>
+            <li data-swap-step="2">
+              <h3>A first draft, from your figures <span class="chip chip--auto">Automate</span></h3>
+              <p>The case study is drafted from the pilot’s own numbers. You edit it, then the client approves it.</p>
+            </li>
+            <li data-swap-step="3">
+              <h3>Attach it anywhere</h3>
+              <p>Approved case studies live in your library, ready to attach to a proposal or share as a link.</p>
+            </li>
+          </ol>
+          <p class="inside__note">Prototype screens with sample data.</p>
+        </div>
+
+        <div class="device" aria-hidden="true">
+          <div class="device__screen">
+            <!-- Screen 1: pilot dashboard -->
+            <div class="scr scr--dash" data-screen="0">
+              <aside class="scr__side">
+                <p class="scr__logo"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#9B2C2C"/><path d="M12 21.5V11a4 4 0 0 1 8 0v11a6 6 0 0 1-12 0V12.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>Proof Loop</p>
+                <p class="is-on">Pilots</p><p>Quote requests</p><p>Case studies</p><p>Templates</p><p>Referrals</p>
+                <p class="scr__plan">Automate plan</p>
+              </aside>
+              <div class="scr__main">
+                <p class="scr__crumb">Pilots / Harbour Street Physio</p>
+                <h4 class="scr__h">Two-week enquiry pilot</h4>
+                <div class="scr__progress"><span style="--p: 0.64"></span><b class="nums">Day 9 of 14</b></div>
+                <div class="scr__cards">
+                  <div class="scr__card">
+                    <p class="scr__label">Average reply to a new enquiry</p>
+                    <p class="scr__big nums">3.1<small>hrs</small></p>
+                    <p class="scr__from">from 26 hrs on day 1</p>
+                    <svg class="scr__chart" viewBox="0 0 220 70" preserveAspectRatio="none"><path d="M0 6 L24 9 L48 20 L72 31 L96 42 L120 51 L144 57 L168 60 L192 61" fill="none" stroke="#9B2C2C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6 L24 9 L48 20 L72 31 L96 42 L120 51 L144 57 L168 60 L192 61 L192 70 L0 70Z" fill="rgba(155,44,44,0.08)"/><line x1="0" y1="69.5" x2="220" y2="69.5" stroke="#E7E1D8"/></svg>
+                  </div>
+                  <ul class="scr__checks">
+                    <li class="done">Scope sheet signed</li>
+                    <li class="done">Consent form signed</li>
+                    <li class="done">Day 1 starting point</li>
+                    <li>Day 14 results <em>due 28 Oct</em></li>
+                    <li>Client quote <em>sends on day 14</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Screen 2: the quote request on the client's phone -->
+            <div class="scr scr--phone" data-screen="1">
+              <div class="phone">
+                <p class="phone__who"><b>Sam Rivera</b> via Proof Loop</p>
+                <div class="phone__msg">Hi M., the two-week pilot finished today. Could you answer three quick questions? It takes about two minutes.</div>
+                <div class="phone__msg">1. What was the problem before?<br>2. What changed in two weeks?<br>3. Would you recommend Sam?</div>
+                <div class="phone__btn">Answer now</div>
+                <p class="phone__meta nums">Sent 9:02 am · Answered 11:40 am</p>
+              </div>
+            </div>
+
+            <!-- Screen 3: first draft of the case study -->
+            <div class="scr scr--draft" data-screen="2">
+              <div class="draft">
+                <div class="draft__bar"><span>Case study draft</span><span class="draft__status">Waiting for client approval</span></div>
+                <p class="draft__kicker">Two-week pilot</p>
+                <h4 class="draft__title">Enquiry replies from 26 hours to 1.5 hours</h4>
+                <p class="draft__meta">Harbour Street Physio · Sam Rivera</p>
+                <div class="draft__fig"><b class="nums">1.5</b><span>hrs average reply, day 14<br>from 26 hrs on day 1</span></div>
+                <p class="draft__quote">“We stopped losing people between the first call and the first booking.”</p>
+                <p class="draft__hint">Drafted from your pilot’s figures. Edit anything before it goes to the client.</p>
+              </div>
+            </div>
+
+            <!-- Screen 4: library -->
+            <div class="scr scr--lib" data-screen="3">
+              <p class="scr__h">Case studies <span class="nums">4</span></p>
+              <div class="lib">
+                <div class="lib__item"><b>Enquiry replies from 26 hours to 1.5 hours</b><span>Harbour Street Physio · Approved</span><i>Attach to proposal</i></div>
+                <div class="lib__item"><b>Quotes sent the same day, down from three days</b><span>Northside Electrical · Approved</span><i>Attach to proposal</i></div>
+                <div class="lib__item"><b>New client onboarding from nine days to four</b><span>Wren &amp; Co Accounting · Approved</span><i>Attach to proposal</i></div>
+                <div class="lib__item"><b>Missed calls halved in a month</b><span>Coastline Dental · Waiting for approval</span><i>Share link</i></div>
+              </div>
+            </div>
+          </div>
+          <div class="device__base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. The loop ============ -->
+  <section class="sheet sheet--dark loop" id="loop" data-loop aria-labelledby="loop-title">
+    <div class="loop__pin">
+      <div class="wrap loop__grid">
+        <div class="loop__text">
+          <h2 id="loop-title" class="sheet__title">Every pilot adds a page.</h2>
+          <p class="sheet__lede">The second pitch is easier than the first, and the third is easier again. That’s the loop.</p>
+          <div class="loop__ref">
+            <p class="loop__refname">Referral credit <span class="chip chip--dark">All plans</span></p>
+            <p>Refer another consultant. When they join, you get credit on your membership. 88% of people trust a recommendation from someone they know more than any other source.<sup><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+          </div>
+        </div>
+        <figure class="ring" aria-label="The loop: join free, run a pilot, capture the proof, pitch with proof, refer a consultant, then back to the start.">
+          <svg viewBox="0 0 400 400" aria-hidden="true">
+            <circle class="ring__track" cx="200" cy="200" r="150"/>
+            <circle class="ring__draw" cx="200" cy="200" r="150" pathLength="1"/>
+          </svg>
+          <ol class="ring__nodes">
+            <li style="--a: -90deg" data-at="0.04"><b>1</b>Join free</li>
+            <li style="--a: -18deg" data-at="0.22"><b>2</b>Run a pilot</li>
+            <li style="--a: 54deg" data-at="0.4"><b>3</b>Capture the proof</li>
+            <li style="--a: 126deg" data-at="0.58"><b>4</b>Pitch with proof</li>
+            <li style="--a: 198deg" data-at="0.76"><b>5</b>Refer a consultant</li>
+          </ol>
+          <div class="ring__centre">
+            <p class="ring__say" data-say="0"><b>Pitch 1</b>Nothing to show yet</p>
+            <p class="ring__say" data-say="0.45"><b>Pitch 2</b>One case study attached</p>
+            <p class="ring__say" data-say="0.86"><b>Pitch 3</b>Two case studies, and a referral</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Pricing ============ -->
+  <section class="sheet sheet--light" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <header class="sheet__head" data-rise>
+        <h2 id="pricing-title" class="sheet__title">Three ways in. One of them free.</h2>
+        <p class="sheet__lede">Start with the free kit. Move up when you want the follow-up and writing done for you, or bigger pilots and a monthly call.</p>
+      </header>
+
+      <div class="freeband" data-rise>
+        <p class="freeband__name">Free pilot kit</p>
+        <p class="freeband__price nums">$0</p>
+        <p class="freeband__what">Pilot plan, consent form and case study template. Run one pilot on your own.</p>
+        <a class="btn btn--small" href="index.html#start">Get the free kit</a>
+      </div>
+
+      <div class="tiers" role="table" aria-label="Plans compared">
+        <div class="tiers__row tiers__row--head" role="row">
+          <span role="columnheader" class="tiers__corner">Monthly plans</span>
+          <div role="columnheader" class="tier" data-rise>
+            <p class="tier__name">Foundation</p>
+            <p class="tier__price nums">$149<small>/month</small></p>
+            <p class="tier__for">Run pilots yourself, with a clear method.</p>
+          </div>
+          <div role="columnheader" class="tier tier--mid" data-rise>
+            <p class="tier__name">Automate</p>
+            <p class="tier__price nums">$349<small>/month</small></p>
+            <p class="tier__for">The follow-up and writing done for you.</p>
+          </div>
+          <div role="columnheader" class="tier tier--top" data-rise>
+            <p class="tier__name">Authority</p>
+            <p class="tier__price nums">$899<small>/month</small></p>
+            <p class="tier__for">Bigger pilots, fewer and more valuable clients.</p>
+          </div>
+        </div>
+        <div class="tiers__row" role="row"><span role="rowheader">Every template: scope, consent, starting point, results, quote questions, case study</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Onboarding guide and pilot dashboard</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Case study library and share links</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Referral credit</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Client quote requests sent for you, with reminders</span><span role="cell" class="no">Not included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">First-draft case study written from your pilot’s figures</span><span role="cell" class="no">Not included</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Bigger pilots (up to six weeks)</span><span role="cell" class="no">Not included</span><span role="cell" class="no">Not included</span><span role="cell" class="yes">Included</span></div>
+        <div class="tiers__row" role="row"><span role="rowheader">Monthly one-on-one strategy call</span><span role="cell" class="no">Not included</span><span role="cell" class="no">Not included</span><span role="cell" class="yes">Included</span></div>
+      </div>
+      <p class="fineprint">Prices in Australian dollars, including GST. Cancel any time. Your case studies stay yours if you leave.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. Compare ============ -->
+  <section class="sheet sheet--paper" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <header class="sheet__head" data-rise>
+        <h2 id="compare-title" class="sheet__title">Proof Loop, next to what exists.</h2>
+        <p class="sheet__lede">Based on each company’s own website, checked 13 October 2026.</p>
+      </header>
+      <div class="compare" data-rise>
+        <table>
+          <thead>
+            <tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col" class="is-us">Proof Loop</th><th scope="col">Sales programs</th><th scope="col">Testimonial tools</th><th scope="col">Going it alone</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Price</th><td class="is-us">$0 to start, then $149 to $899 a month</td><td>Not published, by application<sup><a href="#src-8" aria-label="Source 8">8</a></sup></td><td>Free to $59 a month<sup><a href="#src-10" aria-label="Source 10">10</a></sup></td><td>Free</td></tr>
+            <tr><th scope="row">Works with zero customers</th><td class="is-us yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="yes">Yes</td></tr>
+            <tr><th scope="row">Teaches the sales pitch</th><td class="is-us part">Monthly call in Authority</td><td class="yes">Yes, in depth</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><th scope="row">A fixed, measurable pilot</th><td class="is-us yes">Yes</td><td class="no">Not offered</td><td class="no">Not offered</td><td class="no">Rarely</td></tr>
+            <tr><th scope="row">Client consent before the work</th><td class="is-us yes">Yes, built in</td><td class="no">Not offered</td><td class="part">Asked when collecting</td><td class="no">Rarely</td></tr>
+            <tr><th scope="row">Before and after figures</th><td class="is-us yes">Yes</td><td class="no">Not offered</td><td class="no">Not offered</td><td class="no">Rarely</td></tr>
+            <tr><th scope="row">Client quote requested</th><td class="is-us yes">Sent for you in Automate</td><td class="no">Not offered</td><td class="yes">You send a link</td><td class="no">You chase it</td></tr>
+            <tr><th scope="row">A finished case study</th><td class="is-us yes">Yes</td><td class="no">Not offered</td><td class="part">Only from existing customers</td><td class="no">Rarely</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. Close (3D) ============ -->
+  <section class="act act--close" id="close" data-act="close" data-span="1.0" aria-labelledby="close-title">
+    <div class="act__pin">
+      <div class="close__copy" data-win="-1 Infinity">
+        <h2 id="close-title" class="close__title">Run your first pilot.</h2>
+        <p class="close__text">The free kit has everything for one pilot. Your case studies stay yours, even if you leave.</p>
+        <a class="btn" href="index.html#start">Get the free kit
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. Sources ============ -->
+  <section class="sheet sheet--light sources" id="sources" aria-labelledby="sources-title">
+    <div class="wrap">
+      <h2 id="sources-title" class="sources__title">Sources</h2>
+      <p class="sources__lede">Every figure on this page, from the original publisher. Opened 13 October 2026.</p>
+      <ol class="sources__list">
+        <li id="src-1">G2 and Heinz Marketing, <cite>The Impact of Reviews on B2B Buyers and Sellers</cite>, 2018 benchmark report. Survey of 548 business professionals, September 2017. 92.4% said yes. <a href="https://learn.g2.com/hubfs/Sell%20Microsite%20Files/The%20Impact%20of%20Reviews%20on%20B2B%20-%20Report.pdf">learn.g2.com</a></li>
+        <li id="src-2">Spiegel Research Center, Northwestern University, with PowerReviews, <cite>How Online Reviews Influence Sales</cite>, 2017. Data from one online retailer. <a href="https://spiegel.medill.northwestern.edu/wp-content/uploads/sites/2/2021/04/Spiegel_Online-Review_eBook_Jun2017_FINAL.pdf">spiegel.medill.northwestern.edu</a></li>
+        <li id="src-3">Nielsen, <cite>Trust in Advertising Study</cite>, 2021. Online survey of more than 40,000 consumers worldwide. <a href="https://www.nielsen.com/insights/2021/beyond-martech-building-trust-with-consumers-and-engaging-where-sentiment-is-high/">nielsen.com</a></li>
+        <li id="src-4">TrustRadius, <cite>2024 B2B Buying Disconnect</cite>, 8th edition. Survey of 2,164 technology buyers, March 2024. <a href="https://go.trustradius.com/rs/827-FOI-687/images/TrustRadius-2024-B2B-Buying-Disconnect-Report.pdf">trustradius.com</a></li>
+        <li id="src-5">Australian Bureau of Statistics, <cite>Characteristics of Employment, Australia</cite>, August 2025: 1.1 million independent contractors, 7.6% of everyone employed. <a href="https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/characteristics-employment-australia/latest-release">abs.gov.au</a></li>
+        <li id="src-6">Australian Bureau of Statistics, <cite>Counts of Australian Businesses, including Entries and Exits</cite>, July 2022 to June 2026, tables 1 and 3: 366,289 businesses trading at 30 June 2026; 51.3% of 2022–23 entrants still trading. <a href="https://www.abs.gov.au/statistics/economy/business-indicators/counts-australian-businesses-including-entries-and-exits/latest-release">abs.gov.au</a></li>
+        <li id="src-7">IBISWorld, <cite>Management Consulting in Australia</cite>, June 2026, public summary. An industry estimate for 2025–26. <a href="https://www.ibisworld.com/australia/industry/management-consulting/1896/">ibisworld.com</a></li>
+        <li id="src-8">Consulting.com, programs and application pages. No prices published. <a href="https://www.consulting.com">consulting.com</a></li>
+        <li id="src-9">Client Ascension, programs and pricing page. No program price published. <a href="https://clientascension.io">clientascension.io</a></li>
+        <li id="src-10">Senja, pricing page: Free, Starter $29 a month, Pro $59 a month. <a href="https://senja.io/pricing">senja.io</a></li>
+        <li id="src-11">Australian Government, business.gov.au, <cite>Online reviews</cite>, drawing on ACCC guidance: “it’s illegal to create or arrange for a fake or misleading review”. <a href="https://business.gov.au/online-and-digital/online-reviews">business.gov.au</a></li>
+        <li id="src-12">Salesforce, <cite>State of Sales</cite>, 6th edition, July 2024. 5,500 sales professionals, 300 from Australia and New Zealand. <a href="https://www.salesforce.com/au/news/stories/sales-ai-statistics-2024/">salesforce.com</a></li>
+      </ol>
+      <p class="sources__note">Proof Loop is a student concept for Innovation, Sprint One, 2026. It is not a real business. Names, businesses and figures on the documents and screens are samples. Prices of other companies change; these were seen on the date above.</p>
+      <p class="sources__links"><a class="text-link" href="index.html">Landing page</a> <a class="text-link" href="offer-v1.html">Version 1 of this page</a></p>
+    </div>
+  </section>
+</main>
+
+<div class="nogl" hidden>
+  <p>Your browser didn’t start the 3D view, so the documents aren’t shown. Every part of the offer is still described in the text.</p>
+</div>
+
+<script src="assets/vendor/three.classic.js"></script>
+<script src="assets/offer.docs.js"></script>
+<script src="assets/offer.stage.js"></script>
+<script src="assets/offer.page.js"></script>
+</body>
+</html>

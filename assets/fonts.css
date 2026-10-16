@@ -1,0 +1,10 @@
+/* Local copies of the two typefaces (SIL Open Font License, licences beside the files), so the
+   pages look right with no internet. Latin subset only. */
+@font-face { font-family: "Geist"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/geist-400.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 500; font-style: normal; font-display: swap; src: url("fonts/geist-500.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/geist-600.woff2") format("woff2"); }
+@font-face { font-family: "Geist"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/geist-700.woff2") format("woff2"); }
+@font-face { font-family: "Schibsted Grotesk"; font-weight: 500; font-style: normal; font-display: swap; src: url("fonts/schibsted-500.woff2") format("woff2"); }
+@font-face { font-family: "Schibsted Grotesk"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/schibsted-600.woff2") format("woff2"); }
+@font-face { font-family: "Schibsted Grotesk"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/schibsted-700.woff2") format("woff2"); }
+@font-face { font-family: "Schibsted Grotesk"; font-weight: 800; font-style: normal; font-display: swap; src: url("fonts/schibsted-800.woff2") format("woff2"); }
