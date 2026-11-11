@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof Loop · Enquiries</title>
+<meta name="description" content="Talk to Proof Loop. For new consultants, new real estate agents and investors.">
+<style>
+/* Enquiries page, 11 Nov 2026. Every QR code on the board and the cards lands here. Same system as the scroll page:
+   cream, white, black, Geist. The Send button opens the visitor's email app with the enquiry filled in. */
+@font-face { font-family: "Geist"; src: url("vendor/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+:root { --paper: #efebe4; --white: #f8f6f2; --ink: #151412; --grey: #6f6a63; --line: rgba(21,20,18,.14); --ease: cubic-bezier(.2,.7,.2,1);
+  --sans: "Geist", "Helvetica Neue", Arial, sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: clip; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.45; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.wide { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+.nav .logo { font-weight: 700; letter-spacing: -.03em; text-decoration: none; font-size: 18px; }
+.nav a.how { font-size: 15px; color: var(--grey); text-decoration: none; display: inline-flex; gap: 8px; align-items: center; }
+.nav a.how span { width: 30px; height: 30px; border-radius: 50%; background: rgba(21,20,18,.07); display: grid; place-items: center; transition: transform .4s var(--ease); }
+@media (hover: hover) { .nav a.how:hover span { transform: translateX(3px); } }
+
+.top { padding: 40px 0 34px; }
+.top h1 { font-size: clamp(54px, 9vw, 120px); font-weight: 700; letter-spacing: -.055em; line-height: .9; }
+.top p { font-size: clamp(18px, 1.9vw, 23px); color: var(--grey); margin-top: 20px; max-width: 30em; letter-spacing: -.01em; }
+
+.grid { display: grid; gap: 24px; padding-bottom: 80px; }
+@media (min-width: 900px) { .grid { grid-template-columns: 1.35fr 1fr; gap: 32px; align-items: start; } }
+
+/* the form sits in a tray (outer shell + inner core) */
+.shell { background: rgba(21,20,18,.05); border: 1px solid rgba(21,20,18,.06); border-radius: 30px; padding: 7px; }
+.core { background: var(--white); border-radius: 23px; padding: 28px 24px 26px; box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 30px 60px -40px rgba(40,30,20,.35); }
+@media (min-width: 600px) { .core { padding: 34px 34px 30px; } }
+.who { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; background: #e8e3db; border-radius: 18px; }
+@media (min-width: 600px) { .who { grid-template-columns: repeat(4, 1fr); } }
+.who button { border: 0; background: none; cursor: pointer; padding: 11px 6px; border-radius: 13px; font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; color: var(--grey); transition: background-color .35s var(--ease), color .35s var(--ease); }
+.who button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.who button:active { transform: scale(.97); }
+label { display: block; margin-top: 20px; font-size: 14px; font-weight: 600; letter-spacing: -.005em; }
+input, textarea { display: block; width: 100%; margin-top: 7px; padding: 14px 16px; border: 1px solid #ddd7ce; border-radius: 14px; background: #fff; font-size: 16px; transition: border-color .3s var(--ease); }
+input:focus, textarea:focus { border-color: var(--ink); outline: none; }
+textarea { min-height: 120px; resize: vertical; line-height: 1.45; }
+.send { margin-top: 24px; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 0; cursor: pointer; background: var(--ink); color: var(--white); border-radius: 999px; padding: 8px 8px 8px 24px; font-size: 17px; font-weight: 600; letter-spacing: -.01em; transition: transform .2s var(--ease); }
+.send .ar { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.14); display: grid; place-items: center; transition: transform .4s var(--ease); }
+.send:active { transform: scale(.98); }
+@media (hover: hover) { .send:hover .ar { transform: translateX(3px) translateY(-1px); } }
+.small { font-size: 13.5px; color: var(--grey); margin-top: 12px; }
+.err { color: #6b2a20; font-size: 14px; margin-top: 10px; min-height: 1em; }
+.done { display: none; text-align: left; }
+.done h2 { font-size: 34px; letter-spacing: -.045em; line-height: 1; }
+.done p { color: var(--grey); margin-top: 12px; }
+.sent .form { display: none; } .sent .done { display: block; }
+
+/* the side: what you get, who we are */
+.side { display: grid; gap: 16px; }
+.card { background: var(--white); border-radius: 24px; padding: 26px 24px; }
+.card h3 { font-size: 22px; letter-spacing: -.035em; line-height: 1.1; }
+.card ul { list-style: none; margin-top: 14px; display: grid; gap: 10px; }
+.card li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 15.5px; line-height: 1.4; }
+.card li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); margin-top: 8px; }
+.card .ev { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--grey); }
+.card .ev b { color: var(--ink); font-size: 26px; letter-spacing: -.05em; display: block; line-height: 1; margin-bottom: 4px; }
+.founders { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.founders div { background: var(--paper); border-radius: 16px; padding: 14px; }
+.founders b { display: block; font-size: 16px; letter-spacing: -.02em; }
+.founders span { font-size: 13.5px; color: var(--grey); }
+.inv { display: none; } .investor .inv { display: block; } .investor .mem { display: none; }
+
+footer { border-top: 1px solid var(--line); padding: 22px 0 40px; font-size: 13px; color: var(--grey); }
+footer ol { margin: 8px 0 0 18px; }
+.js .rise { opacity: 0; transform: translateY(24px); }
+.rise.in { opacity: 1; transform: none; transition: opacity .9s var(--ease), transform .9s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .js .rise { opacity: 1; transform: none; } }
+</style>
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="wide">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="explained-v10.html">Proof Loop.</a>
+    <a class="how" href="explained-v10.html">See how it works <span aria-hidden="true">→</span></a>
+  </nav>
+
+  <header class="top rise">
+    <h1>Let’s talk.</h1>
+    <p>Starting out as a consultant or real estate agent? Or thinking of backing us? Tell us who you are and we’ll reply by email.</p>
+  </header>
+
+  <div class="grid">
+    <div class="shell rise"><div class="core" id="core">
+      <form class="form" id="form" novalidate>
+        <div class="who" role="group" aria-label="I am">
+          <button type="button" data-t="New consultant" aria-pressed="true">Consultant</button>
+          <button type="button" data-t="New real estate agent" aria-pressed="false">Real estate agent</button>
+          <button type="button" data-t="Investor" aria-pressed="false">Investor</button>
+          <button type="button" data-t="Something else" aria-pressed="false">Something else</button>
+        </div>
+        <label for="name">Your name</label>
+        <input id="name" name="name" autocomplete="name" required>
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        <label for="msg">What would you like to know? <span style="font-weight:400;color:var(--grey)">(optional)</span></label>
+        <textarea id="msg" name="msg" placeholder="I’d like the free kit."></textarea>
+        <button class="send" type="submit"><span>Send enquiry</span><span class="ar" aria-hidden="true">→</span></button>
+        <p class="err" id="err" role="alert"></p>
+        <p class="small">Sending opens your email app with this filled in. Nothing is stored on this page.</p>
+      </form>
+      <div class="done" aria-live="polite">
+        <h2>Thanks. Your email app should be open.</h2>
+        <p>Press send there and it reaches us. If nothing opened, email us at <a id="mail2" href="#"></a>.</p>
+      </div>
+    </div></div>
+
+    <aside class="side">
+      <div class="card mem">
+        <h3>The free kit gives you:</h3>
+        <ul>
+          <li>Templates: the offer, the before-and-after sheet, the case study.</li>
+          <li>A step-by-step process for your first job, from day one to the last day.</li>
+          <li>A way to get a testimonial with real numbers, confirmed by the client.</li>
+        </ul>
+        <p class="ev"><b>$0</b>to start. No contract. A Pilot Pack ($299 once) or membership (from $49 a month) only if you want more help.</p>
+      </div>
+      <div class="card inv">
+        <h3>Why it matters</h3>
+        <p class="ev" style="border:0;padding:0;margin-top:12px"><b>1.1 million</b>Australians work as independent contractors.<sup>1</sup> Winning clients is the hard part: <b style="display:inline;font-size:inherit;letter-spacing:0">73%</b> of freelancers working under 30 hours a week say so.<sup>2</sup> Proof Loop gives them the system to win the next one. We’d love to talk.</p>
+      </div>
+      <div class="card">
+        <h3>Who you’ll hear from</h3>
+        <div class="founders">
+          <div><b>Oliver Pfitzner</b><span>Co-founder</span></div>
+          <div><b>Linda Nasti</b><span>Co-founder</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<footer><div class="wide">
+  Proof Loop is a Business Innovation school project. Sources:
+  <ol><li>ABS, Characteristics of Employment, Australia, August 2025: 1.1 million independent contractors.</li>
+  <li>Payoneer, Freelancer Income Report 2023: 73% of freelancers working under 30 hours a week say finding new clients is a challenge.</li></ol>
+</div></footer>
+
+<script>
+(function () {
+  /* the address enquiries go to. Set by Oliver before the site goes online. */
+  var TO = "oliverpfitzner888@gmail.com";
+  var set = TO.indexOf("@") > 0;
+  var type = "New consultant", btns = document.querySelectorAll(".who button"), msg = document.getElementById("msg");
+  var tips = { "New consultant": "I’d like the free kit.", "New real estate agent": "I’d like the free kit.", "Investor": "I’d like to hear more about Proof Loop.", "Something else": "" };
+  function pick(b) {
+    type = b.getAttribute("data-t");
+    btns.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    document.body.classList.toggle("investor", type === "Investor");
+    msg.placeholder = tips[type];
+  }
+  btns.forEach(function (b) { b.addEventListener("click", function () { pick(b); }); });
+  var q = new URLSearchParams(location.search).get("i");   // ?i=investor or ?i=agent from a QR code or link
+  if (q) btns.forEach(function (b) { if (b.getAttribute("data-t").toLowerCase().indexOf(q.toLowerCase()) > -1) pick(b); });
+
+  var m2 = document.getElementById("mail2"); m2.textContent = set ? TO : "(address coming soon)"; if (set) m2.href = "mailto:" + TO;
+  document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var n = document.getElementById("name").value.trim(), em = document.getElementById("email").value.trim(), err = document.getElementById("err");
+    if (!n || !/^\S+@\S+\.\S+$/.test(em)) { err.textContent = "Please add your name and a working email."; return; }
+    err.textContent = "";
+    var body = "Name: " + n + "\nEmail: " + em + "\nI am: " + type + "\n\n" + (msg.value.trim() || msg.placeholder);
+    if (set) location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("Proof Loop enquiry: " + type) + "&body=" + encodeURIComponent(body);
+    document.getElementById("core").classList.add("sent");
+  });
+
+  /* gentle rise as things come into view */
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .12 }) : null;
+  document.querySelectorAll(".rise").forEach(function (el, i) { el.style.transitionDelay = (i * 70) + "ms"; if (io) io.observe(el); else el.classList.add("in"); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof Loop</title>
+<meta name="description" content="Proof Loop helps new consultants and real estate agents turn their first job into proof the next client believes.">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+/* v7, 11 Nov 2026: council round 1 (brief, system, craft critics) failed v6. Fixes: full grey grade, nav hides while
+   reading down, clean window push-in (no blurry 9x zoom), no meta-labels, 01-04 markers, no count-ups, one price block,
+   the investor ask with numbers, a clean cross-fade before/after beside the photo, "Here." used once, Sam is the client.
+   Council round 2: fades go through black (never two faces at once), lines reveal whole instead of word by word,
+   the real tiers, the referral line, "Here." on the smiling photo, the example label readable.
+   v8, 11 Nov 2026 (his review): Proof Loop is the system, not just checking numbers: templates, a step-by-step process,
+   a testimonial method, the right resources, framed as opportunity. Keep the gym example. Simpler prices, a short ending,
+   one plain investor line backed by evidence, every button goes to the enquiries page.
+   v9, 11 Nov 2026 (his review of v8): the confusing "You're the client. Check it." phone with buttons is replaced by a
+   plain three-step picture of the testimonial method: Jordan sends the result, the client taps yes, Jordan has proof.
+   v10, 11 Nov 2026 (his review): the message mock-up ("Proof Loop, for Sam") is removed altogether. The section keeps
+   the confirmed case study, the line under it and the two statistics. */
+@font-face { font-family: "Geist"; src: url("vendor/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+:root { --paper: #efebe4; --white: #f8f6f2; --ink: #151412; --grey: #75706a; --line: rgba(21,20,18,.16); --night: #121211;
+  --sans: "Geist", "Helvetica Neue", Arial, sans-serif; --ease: cubic-bezier(.2,.7,.2,1); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: clip; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.45; -webkit-tap-highlight-color: transparent; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+.wide { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+/* one grade for every photo: washed out, close to black and white */
+.wash { filter: grayscale(1) sepia(.07) contrast(1) brightness(1.02); }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.big { font-weight: 700; letter-spacing: -.055em; line-height: .9; }
+.lab { font-size: 15px; color: var(--grey); letter-spacing: -.005em; }
+.src { font-size: 12px; color: var(--grey); }
+sup { font-size: .55em; vertical-align: super; line-height: 0; margin-left: 1px; }
+
+/* nav */
+.nav { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 50; width: min(calc(100% - 24px), 700px); height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 20px; border-radius: 999px; background: rgba(239,235,228,.82); border: 1px solid rgba(21,20,18,.1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); overflow: hidden; }
+.nav .logo { font-weight: 700; letter-spacing: -.03em; text-decoration: none; }
+.nav .links { display: none; gap: 22px; font-size: 14px; }
+.nav .links a { text-decoration: none; color: var(--grey); }
+.nav .go { height: 40px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 14px; }
+.nav { transition: transform .55s var(--ease), opacity .4s var(--ease); }
+.nav.away { transform: translate(-50%, -150%); opacity: 0; }
+.nav .prog { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }
+@media (min-width: 760px) { .nav .links { display: flex; } }
+
+/* 1 the window, then inside it */
+.hero { position: relative; height: 100vh; height: 100svh; background: var(--night); color: var(--white); overflow: hidden; }
+.hero .ph { position: absolute; inset: 0; overflow: hidden; }
+.hero .ph img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+#win { object-position: 50% 40%; }
+.hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.35) 0%, rgba(10,10,10,0) 30%, rgba(10,10,10,0) 45%, rgba(10,10,10,.88) 88%); }
+.hero .inside { opacity: 0; }
+.hero .inside::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0) 40%, rgba(10,10,10,.82) 92%); }
+.hero .txt { position: absolute; left: 0; right: 0; bottom: 56px; }
+.hero .when { font-size: 16px; color: #d6d1c8; }
+.hero h1 { font-size: clamp(64px, 9.6vw, 150px); margin-top: 14px; }
+.hero h1 .ln { display: block; overflow: clip; padding-bottom: .05em; }
+.hero h1 .ln > span { display: block; }
+.js .hero h1 .ln > span { transform: translateY(105%); }
+.hero .line { font-size: clamp(19px, 1.8vw, 24px); color: #d6d1c8; margin-top: 18px; max-width: 24em; letter-spacing: -.01em; }
+.js .hero .when, .js .hero .line, .js .hero .hint { opacity: 0; }
+.hero .wholine { font-size: 15px; color: #a9a39a; margin-top: 26px; max-width: 34em; }
+.js .hero .wholine { opacity: 0; }
+.hero .hint { position: absolute; right: 24px; bottom: 24px; font-size: 13px; color: #a9a39a; }
+.hero .cap { position: absolute; left: 0; right: 0; bottom: 56px; }
+.hero .cap h2 { font-size: clamp(48px, 7vw, 110px); }
+.hero .cap p { font-size: clamp(19px, 1.8vw, 24px); color: #d6d1c8; margin-top: 16px; max-width: 26em; letter-spacing: -.01em; }
+.js .hero .cap > .wide > * { opacity: 0; transform: translateY(30px); }
+
+/* 2 the question */
+.ask { position: relative; min-height: 100vh; min-height: 100svh; background: var(--night); color: var(--white); overflow: hidden; display: flex; align-items: center; }
+.ask .bg { position: absolute; inset: 0; }
+.ask .bg img { width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+.ask .grid { position: relative; display: grid; gap: 48px; align-items: center; padding-top: 96px; padding-bottom: 72px; width: 100%; }
+@media (min-width: 900px) { .ask .grid { grid-template-columns: 380px 1fr; gap: 80px; } }
+.phone { width: min(100%, 360px); background: #f8f6f2; color: var(--ink); border-radius: 40px; padding: 14px; box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 40px 80px -30px rgba(0,0,0,.6); }
+.phone .scr { background: #fff; border-radius: 28px; padding: 18px 16px 16px; min-height: 380px; display: flex; flex-direction: column; }
+.phone .top { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid #ece8e1; }
+.phone .top i { width: 34px; height: 34px; border-radius: 50%; background: #d9d4cb; display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 700; color: #57524b; flex: none; }
+.phone .top b { display: block; font-size: 15px; letter-spacing: -.01em; }
+.phone .top span { font-size: 12px; color: var(--grey); }
+.phone .msgs { flex: 1; display: flex; flex-direction: column; gap: 8px; padding: 16px 0; justify-content: flex-end; }
+.bub { max-width: 84%; padding: 10px 14px; border-radius: 18px; font-size: 15px; line-height: 1.35; letter-spacing: -.01em; }
+.bub.in { background: #efebe4; border-bottom-left-radius: 6px; align-self: flex-start; }
+.bub.out { background: var(--ink); color: var(--white); border-bottom-right-radius: 6px; align-self: flex-end; }
+.bub.big-q { font-size: 18px; font-weight: 600; }
+.phone .reply { display: flex; align-items: center; gap: 8px; border: 1px solid #e3ded6; border-radius: 999px; padding: 10px 14px; font-size: 15px; color: var(--ink); min-height: 44px; }
+.phone .reply .cur { width: 1.5px; height: 18px; background: var(--ink); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.js .ask .bub:not(#b1) { opacity: 0; transform: translateY(16px); }   /* the first message is always there, so the phone is never empty */
+.ask h2 { font-size: clamp(40px, 5.2vw, 76px); }
+.ask .body { font-size: clamp(19px, 1.7vw, 23px); color: #d6d1c8; margin-top: 20px; max-width: 26em; letter-spacing: -.01em; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 44px; max-width: 640px; }
+.stat b { display: block; font-size: clamp(48px, 5.4vw, 80px); font-weight: 700; letter-spacing: -.06em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat p { font-size: 15px; line-height: 1.4; margin-top: 10px; opacity: .85; max-width: 18em; }
+.ask .stat p { color: #d6d1c8; }
+.js .ask .r { opacity: 0; transform: translateY(26px); }
+
+/* 3 what we do: the loop */
+.how { padding: 140px 0 60px; }
+.how h2 { font-size: clamp(44px, 6.4vw, 96px); max-width: 13em; }
+.how .intro { font-size: clamp(19px, 1.8vw, 24px); color: var(--grey); margin-top: 22px; max-width: 30em; letter-spacing: -.01em; }
+.who { display: inline-flex; margin-top: 34px; padding: 5px; border-radius: 999px; background: #e3ded5; }
+.who button { padding: 11px 20px; border-radius: 999px; font-size: 15px; font-weight: 600; letter-spacing: -.01em; color: var(--grey); transition: background-color .35s var(--ease), color .35s var(--ease); }
+.who button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.who button:active { transform: scale(.97); }
+.agent .c-only, body:not(.agent) .a-only { display: none !important; }
+.loop { display: grid; gap: 40px; margin-top: 72px; }
+@media (min-width: 900px) { .loop { grid-template-columns: 400px 1fr; gap: 80px; } }
+.ring { position: relative; }
+@media (min-width: 900px) { .ring { position: sticky; top: 110px; height: max-content; } }
+.ring svg { width: min(100%, 360px); height: auto; display: block; }
+.ring .base { stroke: rgba(21,20,18,.14); }
+.ring .arc { stroke: var(--ink); }
+.ring .dot circle { fill: var(--paper); stroke: rgba(21,20,18,.3); stroke-width: 1.5; transition: fill .4s var(--ease), stroke .4s var(--ease); }
+.ring .dot text { font: 700 15px var(--sans); fill: var(--grey); transition: fill .4s var(--ease); }
+.ring .dot.on circle { fill: var(--ink); stroke: var(--ink); }
+.ring .dot.on text { fill: var(--white); }
+.ring .mid { font: 700 21px var(--sans); letter-spacing: -.03em; fill: var(--ink); }
+.ring .mid2 { font: 400 13px var(--sans); fill: var(--grey); }
+.steps { display: grid; gap: 90px; padding-bottom: 60px; }
+.step .n { font-size: 15px; font-weight: 700; }
+.step h3 { font-size: clamp(34px, 3.8vw, 56px); font-weight: 700; letter-spacing: -.05em; line-height: .95; margin-top: 10px; }
+.step p { font-size: clamp(18px, 1.6vw, 21px); color: var(--grey); margin-top: 16px; max-width: 30em; letter-spacing: -.01em; }
+.step .pic { margin-top: 26px; border-radius: 22px; overflow: hidden; aspect-ratio: 3 / 2; background: #ddd8cf; }
+.step .pic img { width: 100%; height: 100%; object-fit: cover; }
+.nums { margin-top: 26px; background: var(--white); border-radius: 22px; padding: 26px 28px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; box-shadow: 0 1px 2px rgba(40,30,20,.05), 0 24px 50px -30px rgba(40,30,20,.3); }
+.nums small { display: block; font-size: 13px; color: var(--grey); }
+.nums b { display: block; font-size: clamp(40px, 4.4vw, 64px); font-weight: 700; letter-spacing: -.06em; line-height: 1; margin-top: 6px; }
+.nums .to { font-size: 28px; color: var(--grey); }
+.nums .what { grid-column: 1 / -1; font-size: 15px; color: var(--grey); border-top: 1px solid var(--line); padding-top: 14px; }
+
+/* 4 the proof, in three steps (v9: replaces the role-play phone with buttons) */
+.try { background: var(--white); padding: 130px 0 120px; }
+.try h2 { font-size: clamp(44px, 6.2vw, 92px); max-width: 12em; text-wrap: balance; }
+.try .intro { font-size: clamp(19px, 1.8vw, 24px); color: var(--grey); margin-top: 20px; max-width: 30em; letter-spacing: -.01em; }
+.proofcard { margin-top: 56px; background: var(--paper); border-radius: 26px; padding: 30px 30px 32px; max-width: 760px; }
+.proofcard .row1 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 15px; color: var(--grey); } .proofcard .row1 > span { white-space: nowrap; }
+.proofcard .ok { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; color: var(--ink); }
+.proofcard .ok svg { width: 19px; height: 19px; }
+.proofcard h3 { font-size: clamp(30px, 3.2vw, 46px); font-weight: 700; letter-spacing: -.045em; line-height: 1.02; margin-top: 18px; }
+.proofcard .fig { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-top: 18px; font-size: clamp(48px, 5.4vw, 76px); font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+.proofcard .fig span { font-size: 18px; font-weight: 400; letter-spacing: -.01em; color: var(--grey); }
+.proofcard .by { font-size: 16px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--grey); }
+.js .proofcard { opacity: 0; transform: translateY(40px); }
+.three { display: grid; gap: 18px; margin-top: 60px; counter-reset: s; }
+@media (min-width: 900px) { .three { grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: stretch; } }
+.tri { position: relative; background: var(--paper); border-radius: 26px; padding: 26px 24px 28px; display: flex; flex-direction: column; }
+.tri .k { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+.tri .k i { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: var(--white); display: grid; place-items: center; font-style: normal; font-size: 14px; }
+.tri h3 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; margin-top: 16px; }
+.tri .show { margin-top: 22px; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
+.tri .msg { background: #fff; border-radius: 18px 18px 18px 6px; padding: 14px 16px; font-size: 16px; line-height: 1.4; letter-spacing: -.01em; box-shadow: 0 1px 2px rgba(40,30,20,.06), 0 18px 34px -24px rgba(40,30,20,.35); }
+.tri .msg small { display: block; font-size: 12.5px; color: var(--grey); margin-bottom: 6px; }
+.tri .msg b { font-weight: 700; }
+.tri .tap { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--ink); color: var(--white); border-radius: 999px; padding: 16px 20px; font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.tri .tap svg { width: 20px; height: 20px; }
+.tri .tapnote { font-size: 14px; color: var(--grey); text-align: center; margin-top: 10px; }
+.tri .case { background: #fff; border-radius: 18px; padding: 18px 18px 16px; box-shadow: 0 1px 2px rgba(40,30,20,.06), 0 18px 34px -24px rgba(40,30,20,.35); }
+.tri .case .fig { font-size: clamp(34px, 3.2vw, 46px); font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+.tri .case .fig span { display: block; font-size: 14px; font-weight: 400; letter-spacing: -.005em; color: var(--grey); margin-top: 6px; }
+.tri .case .ok { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); width: 100%; font-size: 14px; font-weight: 600; }
+.tri .case .ok svg { width: 18px; height: 18px; flex: none; }
+@media (min-width: 900px) { .tri + .tri::before { content: "→"; position: absolute; left: -17px; top: 34px; width: 14px; text-align: center; font-size: 18px; color: var(--grey); } }
+.js .tri { opacity: 0; transform: translateY(40px); }
+.why { font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -.035em; line-height: 1.12; margin-top: 56px; max-width: 22em; text-wrap: balance; }
+.try .stats { margin-top: 36px; }
+
+/* 5 before / after for Jordan */
+.ba { position: relative; height: 100vh; height: 100svh; overflow: hidden; background: var(--night); color: var(--white); }
+.ba .pic { position: absolute; inset: 0; }
+.ba .pic img { width: 100%; height: 100%; object-fit: cover; }
+.ba .after { opacity: 0; }
+.ba .pic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,18,17,0) 30%, rgba(18,18,17,.92) 75%); }
+.ba .txt { position: absolute; left: 0; right: 0; bottom: 48px; }
+@media (min-width: 900px) {
+  .ba .pic { left: 44%; }
+  .ba .pic::after { background: linear-gradient(90deg, #121211 0%, rgba(18,18,17,0) 22%); }
+  .ba .txt { top: 50%; bottom: auto; transform: translateY(-50%); }
+  .ba .txt .wide > * { max-width: 40%; }
+}
+.ba .tag { font-size: 15px; color: #cfc9bf; }
+.ba .q { font-size: clamp(22px, 2.3vw, 30px); color: #cfc9bf; margin-top: 26px; letter-spacing: -.02em; }
+.ba .a { position: relative; height: 1em; font-size: clamp(44px, 6.2vw, 96px); margin-top: 6px; }
+.ba .a span { position: absolute; left: 0; top: 0; white-space: nowrap; }
+.ba .note { position: relative; height: 3em; font-size: clamp(17px, 1.6vw, 21px); color: #cfc9bf; margin-top: 22px; max-width: 24em; }
+.ba .note span { position: absolute; left: 0; top: 0; }
+.ba .t2 { position: absolute; left: 0; top: 0; }
+.ba .stack { position: relative; height: 1.4em; }
+.js .ba .aft-only { opacity: 0; }
+.ba small { position: absolute; left: 24px; top: 24px; z-index: 2; font-size: 13px; color: var(--white); background: rgba(18,18,17,.72); padding: 4px 10px; border-radius: 999px; }
+
+/* 6 the difference */
+.diff { background: var(--paper); padding: 150px 0 140px; }
+.diff p { font-size: clamp(36px, 5.1vw, 82px); font-weight: 700; letter-spacing: -.055em; line-height: 1; text-wrap: balance; }
+.diff p + p { margin-top: 16px; }
+.diff .w { display: inline-block; }
+.diff .g { color: #a39d93; }
+.diff .for { font-size: clamp(18px, 1.7vw, 22px); font-weight: 400; letter-spacing: -.01em; color: var(--grey); margin-top: 34px; }
+
+/* 7 start safe */
+.zero { background: var(--night); color: var(--white); padding: 120px 0 130px; overflow: hidden; }
+.zero .lab { color: #b9b3a9; }
+.zero .d { font-size: clamp(200px, 34vw, 500px); font-weight: 700; letter-spacing: -.08em; line-height: .8; margin-top: 20px; margin-left: -.04em; transform-origin: 0 100%; }
+.zero .to { font-size: clamp(36px, 4.6vw, 64px); font-weight: 700; letter-spacing: -.045em; margin-top: 28px; }
+.zero .whyz { font-size: clamp(18px, 1.7vw, 22px); color: #b9b3a9; margin-top: 18px; max-width: 30em; }
+.rows { margin-top: 56px; border-top: 1px solid rgba(248,246,242,.3); }
+.rows p { display: flex; justify-content: space-between; gap: 16px; font-size: clamp(17px, 1.7vw, 22px); padding: 16px 0; border-bottom: 1px solid rgba(248,246,242,.3); }
+.rows b { text-align: right; }
+.rows span small { display: block; font-size: 14px; color: #a9a39a; margin-top: 2px; }
+@media (min-width: 600px) { .rows b { white-space: nowrap; } }
+
+/* 8 next step */
+.here .moment { height: min(78vw, 620px); overflow: hidden; }
+.here .moment img { width: 100%; height: 100%; object-fit: cover; }
+.here .wide { padding-top: 60px; padding-bottom: 110px; }
+.here h2 { font-size: clamp(52px, 7.2vw, 112px); margin-top: 14px; text-wrap: balance; max-width: 9em; }
+.here .sub { font-size: clamp(19px, 1.8vw, 24px); color: var(--grey); margin-top: 18px; max-width: 30em; letter-spacing: -.01em; }
+.doors { display: grid; gap: 12px; margin-top: 44px; }
+.doors a { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 24px; border: 1px solid var(--ink); border-radius: 18px; text-decoration: none; font-size: 20px; letter-spacing: -.01em; transition: background-color .3s var(--ease), color .3s var(--ease), transform .2s var(--ease); }
+.doors a:active { transform: scale(.98); }
+.doors a.solid { background: var(--ink); color: var(--paper); }
+.doors a small { display: block; font-size: 14px; opacity: .72; margin-top: 2px; }
+.doors a .ar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(127,120,110,.18); flex: none; transition: transform .3s var(--ease); }
+@media (hover: hover) { .doors a:hover { background: var(--ink); color: var(--paper); } .doors a:hover .ar { transform: translateX(4px); } }
+@media (min-width: 760px) { .doors { grid-template-columns: 1fr 1fr; } }
+footer { padding: 30px 0 48px; border-top: 1px solid var(--line); font-size: 13px; color: var(--grey); }
+footer ol { margin: 12px 0 0 18px; display: grid; gap: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .hero h1 .ln > span, .js .hero .cap > .wide > *, .js .ask .bub, .js .ask .r, .js .tri, .js .proofcard { transform: none; opacity: 1; }
+  .js .hero .when, .js .hero .line, .js .hero .wholine, .js .hero .hint, .js .ba .aft-only { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="#top">Proof Loop.</a>
+  <div class="links"><a href="#ask">01 The problem</a><a href="#how">02 How it works</a><a href="#zero">03 Start safe</a><a href="#here">04 Next step</a></div>
+  <a class="go" href="enquire.html">Enquire</a>
+  <i class="prog" id="prog" aria-hidden="true"></i>
+</nav>
+
+<main>
+  <!-- 01 the problem -->
+  <section class="hero" id="top">
+    <div class="ph"><img id="win" class="wash" src="photos/night-window.jpg" alt="One lit window in a dark building at night"></div>
+    <div class="shade" id="shade"></div>
+    <div class="ph inside" id="inside"><img id="in-img" class="wash" src="photos/story/s1.jpg" alt="Jordan at a laptop late at night"></div>
+    <div class="txt" id="hero-txt"><div class="wide">
+      <p class="when">Month eight.</p>
+      <h1 class="big"><span class="ln"><span>Still no</span></span><span class="ln"><span>clients.</span></span></h1>
+      <p class="line">Good at the work. Nothing to prove it.</p>
+      <p class="wholine">Proof Loop gives new consultants and real estate agents the system to turn their first job into the next one. $0 to start.</p>
+    </div></div>
+    <span class="hint" id="hint">Scroll ↓</span>
+    <div class="cap" id="cap"><div class="wide">
+      <h2 class="big">This is Jordan.</h2>
+      <p>Started out alone eight months ago. Knows the work. Has never been able to show it. (Jordan is an example.)</p>
+    </div></div>
+  </section>
+
+  <section class="ask" id="ask">
+    <div class="bg"><img class="wash" id="ask-img" src="photos/story/s2.jpg" alt=""></div>
+    <div class="wide grid">
+      <div class="phone" aria-label="A message from a possible new client">
+        <div class="scr">
+          <div class="top"><i>DK</i><div><b>Daniel K.</b><span>Possible new client</span></div></div>
+          <div class="msgs">
+            <p class="bub in" id="b1">Thanks Jordan, the plan sounds good.</p>
+            <p class="bub in big-q" id="b2">Before we go ahead: who else have you helped?</p>
+          </div>
+          <div class="reply"><span id="typed"></span><i class="cur"></i></div>
+        </div>
+      </div>
+      <div>
+        <p class="lab r" style="color:#b9b3a9">01 The problem</p>
+        <h2 class="big r" style="margin-top:12px">Then comes<br>the question.</h2>
+        <p class="body r">Every new consultant and agent gets it. Jordan has no case studies, no reviews, no results anyone else has checked. So the client goes with someone who does.</p>
+        <div class="stats r">
+          <div class="stat"><b>73%</b><p>of freelancers working under 30 hours a week say finding new clients is a challenge.<sup>1</sup></p></div>
+          <div class="stat"><b>52%</b><p>of buyers have ruled out a recommended firm before even talking to it.<sup>2</sup></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 how it works -->
+  <section class="how" id="how"><div class="wide">
+    <p class="lab">02 How it works</p>
+    <h2 class="big" style="margin-top:14px">Your first job is your biggest opportunity.</h2>
+    <p class="intro">Proof Loop isn’t a course. It’s a system for that job: templates, a step-by-step process, a testimonial method and the right resources, so one job wins the next.</p>
+    <div class="who" role="group" aria-label="Show the example for">
+      <button type="button" data-who="c" aria-pressed="true">I’m a consultant</button>
+      <button type="button" data-who="a" aria-pressed="false">I’m a real estate agent</button>
+    </div>
+
+    <div class="loop">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 360 360">
+          <circle class="base" cx="180" cy="180" r="140" fill="none" stroke-width="2"/>
+          <circle class="arc" id="arc" cx="180" cy="180" r="140" fill="none" stroke-width="3" stroke-linecap="round" transform="rotate(-90 180 180)" stroke-dasharray="879.6" stroke-dashoffset="879.6"/>
+          <g class="dot" data-i="0"><circle cx="180" cy="40" r="22"/><text x="180" y="45" text-anchor="middle">1</text></g>
+          <g class="dot" data-i="1"><circle cx="320" cy="180" r="22"/><text x="320" y="185" text-anchor="middle">2</text></g>
+          <g class="dot" data-i="2"><circle cx="180" cy="320" r="22"/><text x="180" y="325" text-anchor="middle">3</text></g>
+          <g class="dot" data-i="3"><circle cx="40" cy="180" r="22"/><text x="40" y="185" text-anchor="middle">4</text></g>
+          <text class="mid" x="180" y="176" text-anchor="middle">One system.</text>
+          <text class="mid2" x="180" y="200" text-anchor="middle">for every job</text>
+        </svg>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <p class="n">1</p>
+          <h3>Start with the right offer.</h3>
+          <p><b>Templates.</b> No clients yet? Ours give you a small, fixed-price offer a client can say yes to, and the scope to go with it.</p>
+          <p class="c-only">Jordan offers Sam, who owns a local gym, eight weeks of help getting more people to sign up.</p>
+          <p class="a-only">Jordan offers a young couple, Sarah and Tom, a clear plan and fee to sell their first home.</p>
+          <div class="pic"><img class="wash" src="photos/story/s8.jpg" alt="Jordan working through the plan with a client"></div>
+        </article>
+        <article class="step">
+          <p class="n">2</p>
+          <h3>Follow the process.</h3>
+          <p><b>A step-by-step process</b> for the whole job: what to measure on day one, when to check in, what to record at the end. Nothing that proves it gets missed.</p>
+          <div class="nums c-only"><div><small>Before</small><b>12</b></div><span class="to">→</span><div><small>After 8 weeks</small><b>31</b></div><p class="what">New members a month at Sam’s gym. An example.</p></div>
+          <div class="nums a-only"><div><small>Price guide</small><b>$640k</b></div><span class="to">→</span><div><small>Sold for</small><b>$658k</b></div><p class="what">Sold in 21 days, $18,000 above the guide. An example.</p></div>
+        </article>
+        <article class="step">
+          <p class="n">3</p>
+          <h3>Get a testimonial that says something.</h3>
+          <p><b>A testimonial method.</b> On the last day the client gets one text with the numbers. One tap confirms them, in their name. See how below.</p>
+        </article>
+        <article class="step">
+          <p class="n">4</p>
+          <h3>Use it to win the next client.</h3>
+          <p><b>The right resources.</b> The kit turns it into a case study, with scripts for using it in pitches, listings and online. Next time someone asks who else Jordan has helped, she has an answer.</p>
+        </article>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="try" id="try"><div class="wide">
+    <h2 class="big">One text. One tap.<br>A testimonial that counts.</h2>
+    <p class="intro">This is the testimonial method. When the job is done, the client gets one text with the result and taps yes, so it isn’t just Jordan saying it.</p>
+    <div class="proofcard">
+      <div class="row1"><span>Case study</span><span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-6.5"/></svg>Confirmed by the client</span></div>
+      <h3 class="c-only">A local gym, eight weeks.</h3>
+      <h3 class="a-only">A first home, sold in 21 days.</h3>
+      <p class="fig c-only">12 → 31 <span>new members a month</span></p>
+      <p class="fig a-only">+$18,000 <span>above the price guide</span></p>
+      <p class="by c-only">Confirmed by Sam, the gym owner. One tap, no account.</p>
+      <p class="by a-only">Confirmed by Sarah, the seller. One tap, no account.</p>
+    </div>
+    <p class="why">Jordan didn’t write the proof. The client checked it. That’s why the next client believes it.</p>
+    <div class="stats">
+      <div class="stat"><b>92%</b><p>of business buyers are more likely to buy after reading a trusted review.<sup>3</sup></p></div>
+      <div class="stat"><b>88%</b><p>of people trust recommendations from people they know more than any other source.<sup>4</sup></p></div>
+    </div>
+  </div></section>
+
+  <section class="ba" id="ba">
+    <div class="pic before" id="before"><img class="wash" src="photos/story/s2.jpg" alt="Jordan, worried, reading a message"></div>
+    <div class="pic after" id="after"><img class="wash" src="photos/story/s5.jpg" alt="Jordan, smiling, showing a new client her confirmed case study" style="object-position:62% 50%"></div>
+    <div class="txt"><div class="wide">
+      <div class="stack tag"><span class="t2" id="t-bef">Jordan, before Proof Loop</span><span class="t2 aft-only" id="t-aft">Jordan, after one job</span></div>
+      <p class="q">“Who else have you helped?”</p>
+      <div class="a big"><span id="a-bef">“Um. I’m new…”</span><span class="aft-only" id="a-aft">“Here.”</span></div>
+      <div class="note"><span id="n-bef">No answer. The client goes with someone else.</span><span class="aft-only" id="n-aft">One case study, confirmed by the client. Now there’s something to show.</span></div>
+    </div></div>
+    <small>Jordan is an example</small>
+  </section>
+
+  <section class="diff" id="diff"><div class="wide">
+    <p class="g scrub">Others teach you how to sell.</p>
+    <p class="scrub">We give you the system to prove it.</p>
+    <p class="for rise">For new consultants and new real estate agents.</p>
+  </div></section>
+
+  <!-- 03 start safe -->
+  <section class="zero" id="zero"><div class="wide">
+    <p class="lab">03 Start safe</p>
+    <div class="d" id="d0">$0</div>
+    <p class="to rise">to start.</p>
+    <p class="whyz rise">Only 51.3% of the new professional-services businesses that started in 2022–23 were still trading three years later.<sup>5</sup> So try it on one job before you pay anything.</p>
+    <div class="rows rise">
+      <p><span>Free kit<small>Templates, the step-by-step process, the testimonial method.</small></span><b>$0</b></p>
+      <p><span>Pilot Pack<small>We do your first job with you.</small></span><b>$299 once</b></p>
+      <p><span>Membership<small>The system for every job, every month.</small></span><b>from $49 a month</b></p>
+      <p><span>Contract</span><b>None. Cancel any time.</b></p>
+    </div>
+  </div></section>
+
+  <!-- 04 next step -->
+  <section class="here" id="here">
+    <div class="moment"><img class="wash" id="here-img" src="photos/story/s9.jpg" alt="Jordan at her desk, ready for the next job" style="object-position:50% 72%"></div>
+    <div class="wide">
+      <p class="lab rise">04 Next step</p>
+      <h2 class="big rise">Make every job count twice.</h2>
+      <p class="sub rise">Once for your client. Once more for your next one.</p>
+      <div class="doors rise">
+        <a class="solid" href="enquire.html"><span>New consultants and agents<small>Get the free kit. $0 to start.</small></span><span class="ar">→</span></a>
+        <a href="enquire.html?i=investor"><span>Investors<small>1.1 million Australians work as independent contractors.<sup>6</sup> We help the new ones win clients. Let’s talk.</small></span><span class="ar">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wide">
+  Proof Loop is a Business Innovation school project by Oliver Pfitzner and Linda Nasti. Jordan, Sam, the gym and the home sale are examples. Photos: Thirdman (Pexels); night window: Unsplash.
+  <ol>
+    <li>Payoneer, Freelancer Income Report 2023, 2,000+ freelancers (those working under 30 hours a week).</li>
+    <li>Hinge Research Institute, Referral Marketing for Professional Services Firms, 2015 (51.9% of respondents have ruled out a referral before speaking with the firm).</li>
+    <li>G2 and Heinz Marketing, The Impact of Reviews on B2B Buyers, 2018 (92.4%, 548 business professionals).</li>
+    <li>Nielsen, Trust in Advertising, 2021 (40,000+ people).</li>
+    <li>ABS, Counts of Australian Businesses, July 2022 to June 2026: 51.3% of 2022–23 entrants in professional, scientific and technical services still trading (data cube 8165DC01, table 3).</li>
+    <li>ABS, Characteristics of Employment, Australia, August 2025: 1.1 million independent contractors.</li>
+  </ol>
+</div></footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* consultant / agent switch (works without motion too) */
+  var whoBtns = document.querySelectorAll(".who button");
+  whoBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var agent = b.getAttribute("data-who") === "a";
+      document.body.classList.toggle("agent", agent);
+      whoBtns.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    });
+  });
+
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!window.gsap || !window.ScrollTrigger || reduce) { document.documentElement.classList.remove("js"); $("typed").textContent = "I’m new, but"; return; }
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  gsap.to("#prog", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: true } });
+  /* the nav steps out of the way while you read down, and comes back when you scroll up */
+  var nav = document.querySelector(".nav");
+  ScrollTrigger.create({ start: 0, end: "max", onUpdate: function (self) { nav.classList.toggle("away", self.direction === 1 && self.scroll() > 140); } });
+
+  /* 1 the window: arrive, push into the lit window, come out inside the room */
+  var win = $("win");
+  function origin() {   // the lit window sits 54.2% across and 44.9% down the photo
+    var W = win.clientWidth, H = win.clientHeight, nw = win.naturalWidth || 2400, nh = win.naturalHeight || 4267;
+    var s = Math.max(W / nw, H / nh), rw = nw * s, rh = nh * s;
+    return ((W - rw) * .5 + .542 * rw) + "px " + ((H - rh) * .4 + .449 * rh) + "px";
+  }
+  gsap.timeline({ defaults: { ease: "expo.out" } })
+    .fromTo("#win", { scale: 1.08, opacity: 0 }, { scale: 1, opacity: 1, duration: 2.4, ease: "power2.out" }, 0)
+    .to(".hero .when", { opacity: 1, duration: 1.2 }, .2)
+    .to(".hero h1 .ln > span", { y: 0, duration: 1.3, stagger: .12 }, .35)
+    .to([".hero .line", ".hero .wholine", "#hint"], { opacity: 1, duration: 1, stagger: .15 }, .9);
+
+  gsap.timeline({ scrollTrigger: { trigger: "#top", start: "top top", end: "+=240%", pin: true, scrub: .8, invalidateOnRefresh: true } })
+    .to("#hero-txt", { opacity: 0, y: -60, duration: .18, ease: "power1.in" }, 0)
+    .to("#hint", { opacity: 0, duration: .08 }, 0)
+    .to("#shade", { opacity: 0, duration: .25 }, 0)
+    .fromTo("#win", { transformOrigin: origin, scale: 1, opacity: 1 }, { scale: 2.2, duration: .36, ease: "power2.in" }, .04)
+    .to("#win", { opacity: 0, duration: .08, ease: "none" }, .32)
+    .fromTo("#inside", { opacity: 0 }, { opacity: 1, duration: .14, ease: "power1.out" }, .41)
+    .fromTo("#in-img", { scale: 1.12 }, { scale: 1, duration: .4, ease: "power2.out" }, .41)
+    .to(".hero .cap > .wide > *", { opacity: 1, y: 0, duration: .14, stagger: .06, ease: "power2.out" }, .72)
+    .to({}, { duration: .1 });
+
+  /* 2 the question: the message arrives, Jordan starts typing and gives up */
+  var typed = $("typed"), tries = "I’m new, but I’m really good at";
+  var mm = gsap.matchMedia();
+  function askTimeline(t) {
+    var st = { v: 0 };
+    return gsap.timeline(t)
+      .to("#b2", { opacity: 1, y: 0, duration: .12 }, .18)
+      .to(st, { v: 1, duration: .3, ease: "none", onUpdate: function () {
+        var p = st.v, n = p < .6 ? Math.round(tries.length * p / .6) : Math.round(tries.length * (1 - (p - .6) / .4));
+        typed.textContent = tries.slice(0, Math.max(0, n)); } }, .32)
+      .to(".ask .r", { opacity: 1, y: 0, duration: .14, stagger: .07, ease: "power2.out" }, .5)
+      .add(function () {}, 1);
+  }
+  mm.add("(min-width: 900px) and (min-height: 560px)", function () {
+    askTimeline({ scrollTrigger: { trigger: "#ask", start: "top top", end: "+=160%", pin: true, scrub: .8 } });
+  });
+  mm.add("(max-width: 899px), (max-height: 559px)", function () {
+    askTimeline({ scrollTrigger: { trigger: "#ask", start: "top 60%", once: true } }).timeScale(.4);
+  });
+  gsap.fromTo("#ask-img", { scale: 1.1 }, { scale: 1, ease: "none", scrollTrigger: { trigger: "#ask", start: "top bottom", end: "bottom top", scrub: true } });
+
+  /* 3 the loop: the ring draws itself as the four steps go past */
+  var dots = document.querySelectorAll(".ring .dot"), steps = document.querySelectorAll(".step");
+  gsap.to("#arc", { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: ".steps", start: "top 60%", end: "bottom 70%", scrub: true } });
+  steps.forEach(function (s, i) {
+    ScrollTrigger.create({ trigger: s, start: "top 60%", end: "bottom 60%", onToggle: function (self) { if (self.isActive) dots.forEach(function (d, j) { d.classList.toggle("on", j <= i); }); },
+      onLeaveBack: function () { dots.forEach(function (d, j) { d.classList.toggle("on", j < i); }); } });
+    gsap.from(s, { y: 50, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: s, start: "top 85%", once: true } });
+  });
+  gsap.utils.toArray(".step .pic img, .moment img").forEach(function (im) { gsap.fromTo(im, { scale: 1.12 }, { scale: 1, ease: "none", scrollTrigger: { trigger: im, start: "top bottom", end: "bottom top", scrub: true } }); });
+
+  /* 4 the proof: the three steps arrive in order */
+  gsap.to(".proofcard", { opacity: 1, y: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: ".proofcard", start: "top 85%", once: true } });
+
+  /* 5 before / after: the picture wipes across, the answer changes */
+  gsap.timeline({ scrollTrigger: { trigger: "#ba", start: "top top", end: "+=170%", pin: true, scrub: .8 } })
+    .to({}, { duration: .15 })
+    .to(["#t-bef", "#a-bef", "#n-bef"], { opacity: 0, y: -24, duration: .12, stagger: .02, ease: "power2.in" }, .15)
+    .to("#before", { opacity: 0, duration: .1, ease: "none" }, .27)
+    .to("#after", { opacity: 1, duration: .14, ease: "power1.out" }, .38)
+    .fromTo(["#t-aft", "#a-aft", "#n-aft"], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .14, stagger: .03, ease: "power2.out" }, .5)
+    .to({}, { duration: .2 });
+
+  /* 6 the difference: words light up */
+  gsap.from(".diff .scrub", { y: 34, opacity: 0, duration: .9, stagger: .25, ease: "expo.out", scrollTrigger: { trigger: ".diff", start: "top 70%", once: true } });
+
+  /* 7 $0 grows in */
+  gsap.from("#d0", { scale: .8, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: "#zero", start: "top 70%", once: true } });
+
+  gsap.utils.toArray(".rise").forEach(function (el) { gsap.from(el, { y: 40, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 88%", once: true } }); });
+
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+  addEventListener("load", function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
